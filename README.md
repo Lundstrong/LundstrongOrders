@@ -1,6 +1,8 @@
 <div align="center">
 
 # LundstrongOrders
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders?ref=badge_shield)
+
 A beautiful ordering system, designed for your Roblox Cafes. 
 
 <a href="https://github.com/Lundstrong/Edit-Roblox-Place/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Lundstrong/Edit-Roblox-Place"></a>
@@ -44,6 +46,9 @@ Join the [Lundstrong Discord](https://discord.gg/2w9PmHZPwX). A channel will be 
 
 ## License
 FOSSA Coming soon.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders?ref=badge_large)
 
 ## Acknowledgements
 
