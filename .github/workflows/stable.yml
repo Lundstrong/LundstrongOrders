@@ -1,0 +1,29 @@
+name: Stable Release
+
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: CI and Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - uses: Roblox/setup-foreman@v1
+      with:
+        version: "^1.0.0"
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Report tool versions
+      run: rojo --version
+
+    - name: Deploy
+      run: rojo upload --cookie "$ROBLOSECURITY" --asset_id 6605034516 default.project.json
+      env:
+        ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}

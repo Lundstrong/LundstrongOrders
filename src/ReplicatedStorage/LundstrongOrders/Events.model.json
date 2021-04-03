@@ -1,0 +1,29 @@
+{
+  "ClassName": "Folder",
+  "Children": [
+    {
+        "Name": "claimOrder",
+        "ClassName": "RemoteEvent"
+    },
+    {
+        "Name": "completeOrder",
+        "ClassName": "RemoteEvent"
+    },
+    {
+        "Name": "createOrder",
+        "ClassName": "RemoteFunction"
+    },
+    {
+        "Name": "orderList",
+        "ClassName": "RemoteEvent"
+    },
+    {
+        "Name": "enableGui",
+        "ClassName": "RemoteEvent"
+    },
+    {
+        "Name": "sendNotification",
+        "ClassName": "RemoteEvent"
+    }
+  ]
+}
