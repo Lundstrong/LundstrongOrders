@@ -5,6 +5,7 @@ A beautiful ordering system, designed for your Roblox Cafes.
 
 <a href="https://github.com/Lundstrong/Edit-Roblox-Place/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Lundstrong/Edit-Roblox-Place"></a>
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Lundstrong/LundstrongOrders">
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders?ref=badge_shield"><img alt="FOSSA Status" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders.svg?type=shield"></a>
 </div>
 
 ## Getting Started
@@ -14,8 +15,6 @@ A beautiful ordering system, designed for your Roblox Cafes.
 None.
 
 ### Installation
-
-<br>
 
 #### Roblox
 
@@ -43,7 +42,7 @@ We love contributions! Pull requests are warmly welcomed and highly appriciated.
 Join the [Lundstrong Discord](https://discord.gg/2w9PmHZPwX). A channel will be opened up in the near-future for support.
 
 ## License
-FOSSA Coming soon.
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FLundstrong%2FLundstrongOrders?ref=badge_large)
 
 ## Acknowledgements
 
