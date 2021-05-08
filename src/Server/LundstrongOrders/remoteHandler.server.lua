@@ -6,6 +6,8 @@ local Players = game:GetService("Players")
 local runService = game:GetService("RunService")
 local debounce = {}
 
+local apiEvents = game.ServerScriptService.LundstrongOrders.apiEvents
+
 DataStore2.Combine("DATA", "points")
 
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("createOrder").OnServerInvoke = function(creator: Player, receiver: string, items: {[number]: string})
@@ -14,6 +16,7 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
         local newOrder = Order.new(creator, receiver, items)
         print("NEW ORDER:", newOrder.id)
         game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("orderList"):FireAllClients(Order:GetOrders())
+        apiEvents.orderCreated:Fire(newOrder)
         if (creator.Name ~= receiver) then -- Cashier GUI order
             game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(newOrder.orderReceiver, creator.Name.." has created an order for you.", 10)
             coroutine.resume(coroutine.create(function()
@@ -31,6 +34,7 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
         return "Slow down! Your order cooldown hasn't expired!"
     end
 end
+
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("claimOrder").OnServerEvent:Connect(function(plr, id)
     local orderFound = false
     for _,v in pairs(Order:GetOrders()) do 
@@ -40,16 +44,19 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
                     if (config.OrderBoardSettings.MinimumRankEnabled) then
                         if (plr:GetRankInGroup(config.OrderBoardSettings.GroupID) >= config.OrderBoardSettings.MinimumRank) then
                             v:Claim(plr)
+                            apiEvents.orderClaimed:Fire(v)
                             orderFound = v
                         end
                     else
                         if (table.find(config.OrderBoardSettings.RankTable, plr:GetRankInGroup(config.OrderBoardSettings.GroupID))) then
                             v:Claim(plr)
+                            apiEvents.orderClaimed:Fire(v)
                             orderFound = v
                         end
                     end
                 else
                     v:Claim(plr)
+                    apiEvents.orderClaimed:Fire(v)
                     orderFound = v
                 end
                 game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been claimed by "..plr.Name..".", 10)
@@ -66,6 +73,7 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
        warn("[LundstrongOrders] No order found with ID "..id)
     end
 end)
+
 game.Players.PlayerAdded:Connect(function(plr)
     local pointsStore = DataStore2("points", plr)
 
@@ -88,6 +96,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(plr, "LundstrongOrders does work in studio, but will not save points.", 45)
     end
 end)
+
 for _,plr in pairs(Players:GetPlayers()) do
     local pointsStore = DataStore2("points", plr)
 
@@ -110,6 +119,7 @@ for _,plr in pairs(Players:GetPlayers()) do
         game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(plr, "LundstrongOrders does work in studio, but will not save points.", 45)
     end
 end
+
 game.Players.PlayerRemoving:Connect(function(plr)
     local orderFound = false
     for _,v in pairs(Order:GetOrders()) do 
@@ -127,12 +137,14 @@ game.Players.PlayerRemoving:Connect(function(plr)
        print("[LundstrongOrders] No orders found for leaving player "..plr.Name)
     end
 end)
+
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("completeOrder").OnServerEvent:Connect(function(_, id)
     local orderFound = false
     for _,v in pairs(Order:GetOrders()) do 
         if (v.id == id) then
             if (v.isClaimed) then
                 v:Complete()
+                apiEvents.orderCompleted:Fire(v)
                 game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has completed.", 20)
                 orderFound = v
             else
@@ -146,4 +158,12 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
     else
        warn("[LundstrongOrders] No order found with ID "..id)
     end
+end)
+
+apiEvents.enableGui.Event:Connect(function(Player: Player, gui: string)
+    game.ReplicatedStorage.LundstrongOrders.Events.enableGui:FireClient(Player, gui)
+end)
+
+apiEvents.sendNotification.Event:Connect(function(Player: Player, message: string, time: number?)
+    game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(Player, message, time)
 end)

@@ -1,0 +1,25 @@
+{
+  "ClassName": "Folder",
+  "Children": [
+    {
+        "Name": "orderClaimed",
+        "ClassName": "BindableEvent"
+    },
+    {
+        "Name": "orderCompleted",
+        "ClassName": "BindableEvent"
+    },
+    {
+        "Name": "orderCreated",
+        "ClassName": "BindableEvent"
+    },
+    {
+        "Name": "enableGui",
+        "ClassName": "BindableEvent"
+    },
+    {
+        "Name": "sendNotification",
+        "ClassName": "BindableEvent"
+    }
+  ]
+}
