@@ -1,5 +1,5 @@
 local api = {}
-local guiTypes = {"cashierGui", "kioskGui"}
+local guiTypes = {"cashierGui", "kioskGui", "hrScreenGui"}
 local events = game.ServerScriptService.LundstrongOrders.apiEvents
 
 api.onOrderCreated = events.orderCreated.Event
@@ -12,7 +12,7 @@ function api:EnableGui(Player: Player, gui: string)
     if (table.find(guiTypes, gui)) then
         events.enableGui:Fire(Player, gui)
     else
-        error("[LundstrongOrders] api:EnableGui type is NOT of \"cashierGui\" OR \"kioskGui\"")
+        error("[LundstrongOrders] api:EnableGui type is NOT of \"cashierGui\" OR \"kioskGui\" OR \"hrScreenGui\"")
     end
 end
 
