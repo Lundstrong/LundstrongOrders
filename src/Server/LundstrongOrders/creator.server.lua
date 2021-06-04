@@ -50,7 +50,16 @@ if (workspace.LundstrongOrders:FindFirstChild("Models")) then
                 end
             end)
         elseif (v.Name == "PickupScreen") then
-            -- Not done!! 
+            for _,player in pairs(PlayersService:GetPlayers()) do     
+                local clone = player.PlayerGui.LundstrongOrders.pickupScreenGui.pickupGuiClone:Clone()
+                clone.Parent = player.PlayerGui.LundstrongOrders.pickupScreenGui
+                clone.Name = "pickupGui"
+                clone.Adornee = v.mainPart
+            end
+            local clone = game.StarterGui.LundstrongOrders.pickupScreenGui.pickupGuiClone:Clone()
+            clone.Parent = game.StarterGui.LundstrongOrders.pickupScreenGui
+            clone.Name = "pickupGui"
+            clone.Adornee = v.mainPart
         elseif (v.Name == "hrScreen") then
             v.mainPart.mainGui.Enabled = true
             v.mainPart.mainGui.Frame.ImageLabel.Image = Configuration.Branding.ImageId
