@@ -6,6 +6,7 @@ if (run:IsClient()) then -- ! This script can only run on the client side.
         ["hrScreenGuiFolder"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui,
         ["hrScreenGui"] = {
                 ["home"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.home,
+                ["modal"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.modal,
                 ["manageOrders"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.manageOrders,
                 ["staffStatus"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.staffStatus,
                 ["gameSettings"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.gameSettings

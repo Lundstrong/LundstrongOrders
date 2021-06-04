@@ -30,10 +30,73 @@ end)
 path.hrScreenGui.gameSettings.homeIcon.homeButton.MouseButton1Up:Connect(function()
     tween:Create(path.hrScreenGui.gameSettings, path.hrScreenGui.home)
 end)
+path.hrScreenGui.gameSettings.exitButton.MouseButton1Up:Connect(function()
+    openBounce = false
+    tween:CreateExitTween(path.hrScreenGui.gameSettings)
+end)
+path.hrScreenGui.gameSettings.exitButton.TextButton.MouseButton1Up:Connect(function()
+    openBounce = false
+    tween:CreateExitTween(path.hrScreenGui.gameSettings)
+end)
+-- Manage Orders
+path.hrScreenGui.manageOrders.homeIcon.MouseButton1Up:Connect(function()
+    tween:Create(path.hrScreenGui.manageOrders, path.hrScreenGui.home)
+end)
+path.hrScreenGui.manageOrders.homeIcon.homeButton.MouseButton1Up:Connect(function()
+    tween:Create(path.hrScreenGui.manageOrders, path.hrScreenGui.home)
+end)
+path.hrScreenGui.gameSettings.exitButton.MouseButton1Up:Connect(function()
+    openBounce = false
+    tween:CreateExitTween(path.hrScreenGui.gameSettings)
+end)
+path.hrScreenGui.gameSettings.exitButton.TextButton.MouseButton1Up:Connect(function()
+    openBounce = false
+    tween:CreateExitTween(path.hrScreenGui.gameSettings)
+end)
+    -- Modal
+path.hrScreenGui.modal.orderOptions.exitButton.MouseButton1Up:Connect(function()
+    local tween2 = tweenService:Create(path.hrScreenGui.manageOrders.modalAnimFrame, TweenInfo.new(.5), { BackgroundTransparency = 1 })
+    local tween1 = tweenService:Create(path.hrScreenGui.modal, TweenInfo.new(1), { Position = UDim2.new(0.5, 0, 1.5, 0) })
+    tween1:Play()
+    wait(0.5)
+    tween2:Play()
+    tween2.Completed:Connect(function()
+        path.hrScreenGui.modal.Visible = false
+    end)
+end)
+path.hrScreenGui.modal.orderOptions.exitButton.exitButtonText.MouseButton1Up:Connect(function()
+    local tween2 = tweenService:Create(path.hrScreenGui.manageOrders.modalAnimFrame, TweenInfo.new(.5), { BackgroundTransparency = 1 })
+    local tween1 = tweenService:Create(path.hrScreenGui.modal, TweenInfo.new(1), { Position = UDim2.new(0.5, 0, 1.5, 0) })
+    tween1:Play()
+    wait(0.5)
+    tween2:Play()
+    tween2.Completed:Connect(function()
+        path.hrScreenGui.modal.Visible = false
+    end)
+end)
+-- Staff Status
+path.hrScreenGui.staffStatus.homeIcon.MouseButton1Up:Connect(function()
+    tween:Create(path.hrScreenGui.staffStatus, path.hrScreenGui.home)
+end)
+path.hrScreenGui.staffStatus.homeIcon.homeButton.MouseButton1Up:Connect(function()
+    tween:Create(path.hrScreenGui.staffStatus, path.hrScreenGui.home)
+end)
+path.hrScreenGui.staffStatus.exitButton.MouseButton1Up:Connect(function()
+    openBounce = false
+    tween:CreateExitTween(path.hrScreenGui.staffStatus)
+end)
+path.hrScreenGui.staffStatus.exitButton.TextButton.MouseButton1Up:Connect(function()
+    openBounce = false
+    tween:CreateExitTween(path.hrScreenGui.staffStatus)
+end)
 -- * Scrolling Frame Handlers
 path.hrScreenGui.gameSettings.ScrollingFrame.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 	local absoluteSize = path.hrScreenGui.gameSettings.ScrollingFrame.UIListLayout.AbsoluteContentSize
 	path.hrScreenGui.gameSettings.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y)
+end)
+path.hrScreenGui.manageOrders.ScrollingFrame.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+	local absoluteSize = path.hrScreenGui.manageOrders.ScrollingFrame.UIListLayout.AbsoluteContentSize
+	path.hrScreenGui.manageOrders.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y)
 end)
 -- * Fade IN
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("enableGui").OnClientEvent:Connect(function(gui)

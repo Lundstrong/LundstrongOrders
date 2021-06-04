@@ -1,5 +1,6 @@
 local path = require(game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.filePaths)
 local config = require(workspace.LundstrongOrders.Configuration)
+local tweenService = game:GetService("TweenService")
 
 local function getTableKeys(tab)
     local keyset = {}
@@ -79,6 +80,90 @@ for _,v in pairs(getConfigKeys(config)) do
         end
     end
 end
+
+-- Manage Orders
+local orderInstances = {}
+game.ReplicatedStorage.LundstrongOrders.Events.orderList.OnClientEvent:Connect(function(orders)
+    path.hrScreenGui.manageOrders.ScrollingFrame.noOrdersFound.Visible = false
+    for _,v in pairs(orders) do 
+        if (orderInstances[v.id]) then
+            local status = "unclaimed"
+            if (v.isClaimed) then
+                status = "claimed"
+            end
+            if (v.isCompleted) then
+                status = "completed"
+            end
+            orderInstances[v.id].orderStatus.Text = status
+        else
+            local clone = path.hrScreenGui.manageOrders.ScrollingFrame.orderClone:Clone()
+            clone.Parent = path.hrScreenGui.manageOrders.ScrollingFrame
+            clone.Visible = true
+            clone.Name = "Order"
+            clone.Username.Text = "for "..v.orderReceiver.Name
+            clone.ImageFrame.ImageLabel.Image = "rbxthumb://type=Avatar&id="..v.orderReceiver.UserId.."&w=720&h=720"
+            clone.orderId.Text = "Order #"..v.id
+            local status = "unclaimed"
+            if (v.isClaimed) then
+                status = "claimed"
+            end
+            if (v.isCompleted) then
+                status = "completed"
+            end
+            
+            clone.orderStatus.Text = status
+            clone.viewMoreButton.MouseButton1Up:Connect(function()
+                -- Fill Modal Data
+                for _,child in pairs(path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame:GetChildren()) do
+                    if (child.Name == "Item") then
+                        child:Destroy()
+                    end
+                end
+                for _,itemData in pairs(v.items) do
+                    local item = path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame.itemGroupClone:Clone()
+                    item.Parent = path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame
+                    item.Name = "Item"
+                    item.Visible = true
+                    item.itemFrame.TextLabel.Text = itemData
+                end
+                -- Tween
+                local tween1 = tweenService:Create(path.hrScreenGui.manageOrders.modalAnimFrame, TweenInfo.new(.5), { BackgroundTransparency = .2 })
+                local tween2 = tweenService:Create(path.hrScreenGui.modal, TweenInfo.new(1), { Position = UDim2.new(0.5, 0, 0.5, 0) })
+
+                path.hrScreenGui.modal.Position = UDim2.new(0.5, 0, 1.5, 0)
+                path.hrScreenGui.modal.Visible = true
+
+                tween1:Play()
+                tween2:Play()
+            end)
+            clone.viewMoreButton.viewMoreButtonText.MouseButton1Up:Connect(function()
+                -- Fill Modal Data
+                for _,child in pairs(path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame:GetChildren()) do
+                    if (child.Name == "Item") then
+                        child:Destroy()
+                    end
+                end
+                for _,itemData in pairs(v.items) do
+                    local item = path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame.itemGroupClone:Clone()
+                    item.Parent = path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame
+                    item.Name = "Item"
+                    item.Visible = true
+                    item.itemFrame.TextLabel.Text = itemData
+                end
+                -- Tween
+                local tween1 = tweenService:Create(path.hrScreenGui.manageOrders.modalAnimFrame, TweenInfo.new(.5), { BackgroundTransparency = .2 })
+                local tween2 = tweenService:Create(path.hrScreenGui.modal, TweenInfo.new(1), { Position = UDim2.new(0.5, 0, 0.5, 0) })
+
+                path.hrScreenGui.modal.Position = UDim2.new(0.5, 0, 1.5, 0)
+                path.hrScreenGui.modal.Visible = true
+
+                tween1:Play()
+                tween2:Play()
+            end)
+            orderInstances[v.id] = clone
+        end
+    end
+end)
 
 --[[ * Autofill (Taken from BAE Code)
 local Players = game:GetService("Players")

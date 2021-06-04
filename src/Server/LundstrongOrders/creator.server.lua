@@ -49,8 +49,31 @@ if (workspace.LundstrongOrders:FindFirstChild("Models")) then
                     enableGui:FireClient(plr, "kioskGui")
                 end
             end)
-        elseif (v.Name == "PickuPlayersServicecreen") then
+        elseif (v.Name == "PickupScreen") then
             -- Not done!! 
+        elseif (v.Name == "hrScreen") then
+            v.mainPart.mainGui.Enabled = true
+            v.mainPart.mainGui.Frame.ImageLabel.Image = Configuration.Branding.ImageId
+            local clickDetector = Instance.new("ClickDetector")
+            clickDetector.Parent = v.mainPart
+            clickDetector.MouseClick:Connect(function(plr)
+                if (Configuration.hrScreenSettings.GroupID) then
+                    if (Configuration.hrScreenSettings.MinimumRankEnabled) then
+                        if (plr:GetRankInGroup(Configuration.hrScreenSettings.GroupID) >= Configuration.hrScreenSettings.MinimumRank) then
+                            print("Firing client with hrScreenGui")
+                            enableGui:FireClient(plr, "hrScreenGui")
+                        end
+                    else
+                        if (table.find(Configuration.hrScreenSettings.RankTable, plr:GetRankInGroup(Configuration.hrScreenSettings.GroupID))) then
+                            print("Firing client with hrScreenGui")
+                            enableGui:FireClient(plr, "hrScreenGui")
+                        end
+                    end
+                else
+                    print("Firing client with hrScreenGui")
+                    enableGui:FireClient(plr, "hrScreenGui")
+                end
+            end)
         elseif (v.Name == "OrderDisplay") then
             for _,player in pairs(PlayersService:GetPlayers()) do     
                 local clone = player.PlayerGui.LundstrongOrders.chefClaimGui.chefClaimGuiClone:Clone()
