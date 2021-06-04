@@ -1,4 +1,5 @@
 local api = {}
+local playerService = game:GetService("Players")
 local guiTypes = {"cashierGui", "kioskGui", "hrScreenGui"}
 local events = game.ServerScriptService.LundstrongOrders.apiEvents
 
@@ -18,6 +19,15 @@ end
 
 function api:SendNotification(Player: Player, message: string, time: number?)
     events.sendNotification:Fire(Player, message, time)
+end
+
+function api:RegisterPluginGuiWithHrScreen(gui: GuiObject)
+    for _,Player in pairs(playerService:GetPlayers()) do
+        Player.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.plugins.ScrollingFrame.noPlugins.Visible = false
+        gui:Clone().Parent = Player.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.plugins.ScrollingFrame
+    end
+    game.StarterGui.LundstrongOrders.hrScreenGui.hrScreenGui.plugins.ScrollingFrame.noPlugins.Visible = false
+    gui:Clone().Parent = game.StarterGui.LundstrongOrders.hrScreenGui.hrScreenGui.plugins.ScrollingFrame
 end
 
 return api

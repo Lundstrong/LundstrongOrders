@@ -8,7 +8,7 @@ if (run:IsClient()) then -- ! This script can only run on the client side.
                 ["home"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.home,
                 ["modal"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.modal,
                 ["manageOrders"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.manageOrders,
-                ["staffStatus"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.staffStatus,
+                ["plugins"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.plugins,
                 ["gameSettings"] = game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.hrScreenGui.gameSettings
             }
         }
