@@ -24,6 +24,10 @@
     {
         "Name": "sendNotification",
         "ClassName": "RemoteEvent"
+    },
+    {
+        "Name": "removeOrder",
+        "ClassName": "RemoteFunction"
     }
   ]
 }

@@ -45,13 +45,13 @@ end)
 path.hrScreenGui.manageOrders.homeIcon.homeButton.MouseButton1Up:Connect(function()
     tween:Create(path.hrScreenGui.manageOrders, path.hrScreenGui.home)
 end)
-path.hrScreenGui.gameSettings.exitButton.MouseButton1Up:Connect(function()
+path.hrScreenGui.manageOrders.exitButton.MouseButton1Up:Connect(function()
     openBounce = false
-    tween:CreateExitTween(path.hrScreenGui.gameSettings)
+    tween:CreateExitTween(path.hrScreenGui.manageOrders)
 end)
-path.hrScreenGui.gameSettings.exitButton.TextButton.MouseButton1Up:Connect(function()
+path.hrScreenGui.manageOrders.exitButton.TextButton.MouseButton1Up:Connect(function()
     openBounce = false
-    tween:CreateExitTween(path.hrScreenGui.gameSettings)
+    tween:CreateExitTween(path.hrScreenGui.manageOrders)
 end)
     -- Modal
 path.hrScreenGui.modal.orderOptions.exitButton.MouseButton1Up:Connect(function()

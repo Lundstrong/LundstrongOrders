@@ -160,6 +160,44 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
     end
 end)
 
+game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("removeOrder").OnServerInvoke = function(actioner: Player, id: number)
+    local orderFound = false
+    for _,v in pairs(Order:GetOrders()) do 
+        if (v.id == id) then
+            if (config.hrScreenSettings.GroupID) then
+                if (config.hrScreenSettings.MinimumRankEnabled) then
+                    if (actioner:GetRankInGroup(config.hrScreenSettings.GroupID) >= config.hrScreenSettings.MinimumRank) then
+                        v:Complete()
+                        -- apiEvents.orderCompleted:Fire(v) --? Do we do this?
+                        game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been deleted by "..actioner.Name, 20)
+                        orderFound = v
+                    end
+                else
+                    if (table.find(config.hrScreenSettings.RankTable, actioner:GetRankInGroup(config.hrScreenSettings.GroupID))) then
+                        v:Complete()
+                        -- apiEvents.orderCompleted:Fire(v) --? Do we do this?
+                        game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been deleted by "..actioner.Name, 20)
+                        orderFound = v
+                    end
+                end
+            else
+                v:Complete()
+                -- apiEvents.orderCompleted:Fire(v) --? Do we do this?
+                game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been deleted by "..actioner.Name, 20)
+                orderFound = v
+            end
+        end
+    end
+    print(orderFound)
+    if (orderFound) then 
+        game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("orderList"):FireAllClients(Order:GetOrders())
+        return true
+    else
+       warn("[LundstrongOrders] No order found with ID "..id.." or "..actioner.Name.." does not have permission to delete the order.")
+       return "Either no order has been found or you do not have permissions to delete this order."
+    end
+end
+
 apiEvents.enableGui.Event:Connect(function(Player: Player, gui: string)
     game.ReplicatedStorage.LundstrongOrders.Events.enableGui:FireClient(Player, gui)
 end)

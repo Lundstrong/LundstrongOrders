@@ -1,10 +1,5 @@
 local ps = game:GetService("Players")
 return function()
-	if script:FindFirstChild("Server") then
-		script:FindFirstChild("Server").LundstrongOrders.Parent = game:GetService("ServerScriptService")
-	else
-		error("[LundstrongOrders] Unable to load a main module of the system. Try shutting down this sever to fix the issue. (Module: Server)")
-	end
 	if script:FindFirstChild("ReplicatedStorage") then
 		script:FindFirstChild("ReplicatedStorage").LundstrongOrders.Parent = game:GetService("ReplicatedStorage")
 	else
@@ -21,5 +16,10 @@ return function()
 		end
 	else
 		error("[LundstrongOrders] Unable to load a main module of the system. Try shutting down this server to fix the issue. (Module: Client)")
+	end
+	if script:FindFirstChild("Server") then
+		script:FindFirstChild("Server").LundstrongOrders.Parent = game:GetService("ServerScriptService")
+	else
+		error("[LundstrongOrders] Unable to load a main module of the system. Try shutting down this sever to fix the issue. (Module: Server)")
 	end
 end

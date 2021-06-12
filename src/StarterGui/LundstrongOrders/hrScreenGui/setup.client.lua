@@ -1,16 +1,8 @@
 local path = require(game.Players.LocalPlayer.PlayerGui.LundstrongOrders.hrScreenGui.filePaths)
 local config = require(workspace.LundstrongOrders.Configuration)
+local Nofications = require(game.ReplicatedStorage.LundstrongOrders.notifHandler)
 local tweenService = game:GetService("TweenService")
-
-local function getTableKeys(tab)
-    local keyset = {}
-    for _,v in ipairs(tab) do
-      for k,_ in pairs(v) do
-        keyset[#keyset + 1] = k -- More effective/optimised than table.insert(keyset,k)
-      end
-    end
-    return keyset
-end
+local UIS = game:GetService("UserInputService")
 
 local function getConfigKeys(tab)
     local keyset = {}
@@ -83,6 +75,7 @@ end
 
 -- Manage Orders
 local orderInstances = {}
+local modalOrder = {}
 game.ReplicatedStorage.LundstrongOrders.Events.orderList.OnClientEvent:Connect(function(orders)
     path.hrScreenGui.manageOrders.ScrollingFrame.noOrdersFound.Visible = false
     for _,v in pairs(orders) do 
@@ -114,6 +107,9 @@ game.ReplicatedStorage.LundstrongOrders.Events.orderList.OnClientEvent:Connect(f
             clone.orderStatus.Text = status
             clone.viewMoreButton.MouseButton1Up:Connect(function()
                 -- Fill Modal Data
+                modalOrder = v
+                print("Data Filled")
+                path.hrScreenGui.modal.orderOptions.ID.Value = v.id
                 for _,child in pairs(path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame:GetChildren()) do
                     if (child.Name == "Item") then
                         child:Destroy()
@@ -138,6 +134,8 @@ game.ReplicatedStorage.LundstrongOrders.Events.orderList.OnClientEvent:Connect(f
             end)
             clone.viewMoreButton.viewMoreButtonText.MouseButton1Up:Connect(function()
                 -- Fill Modal Data
+                modalOrder = v
+                print("Data Filled")
                 for _,child in pairs(path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame:GetChildren()) do
                     if (child.Name == "Item") then
                         child:Destroy()
@@ -163,6 +161,52 @@ game.ReplicatedStorage.LundstrongOrders.Events.orderList.OnClientEvent:Connect(f
             orderInstances[v.id] = clone
         end
     end
+end)
+
+if (UIS.TouchEnabled) then
+    path.hrScreenGui.modal.orderOptions.deleteOrderButton.deleteOrderButtonText.Text = "Double Tap to Delete Order"
+end
+
+-- Modal Order Handler (requires ORDER INSTANCES)
+local function deleteOrder()
+    if (not modalOrder.isClaimed) then
+        local deleteOrderSucess = game.ReplicatedStorage.LundstrongOrders.Events.removeOrder:InvokeServer(modalOrder.id)
+        if (deleteOrderSucess == true) then
+            Nofications:CreateNotification("Order #"..modalOrder.id.." has been deleted.")
+        else
+            Nofications:CreateNotification(deleteOrderSucess, 12)
+        end
+    end
+end
+path.hrScreenGui.modal.orderOptions.deleteOrderButton.MouseButton2Down:Connect(deleteOrder)
+path.hrScreenGui.modal.orderOptions.deleteOrderButton.deleteOrderButtonText.MouseButton2Down:Connect(deleteOrder)
+-- Double Click
+local count = 0
+local threshHold = 2
+local clickTime = 0.5
+path.hrScreenGui.modal.orderOptions.deleteOrderButton.TouchTap:Connect(function()
+    count += 1
+	
+	if count % threshHold == 0 then
+		count = 0
+		print("multi click accepted!")
+		deleteOrder()
+	end
+	
+	wait(clickTime )
+	count -= 1
+end)
+path.hrScreenGui.modal.orderOptions.deleteOrderButton.deleteOrderButtonText.TouchTap:Connect(function()
+    count += 1
+	
+	if count % threshHold == 0 then
+		count = 0
+		print("multi click accepted!")
+		deleteOrder()
+	end
+	
+	wait(clickTime )
+	count -= 1
 end)
 
 --[[ * Autofill (Taken from BAE Code)
