@@ -6,8 +6,13 @@
     {
       "fileMatch": ["^foreman.toml$"],
       "matchStrings": [".+ = { source = \"(?<depName>.+)\", version = \"(?<currentValue>.+)\" }"],
-      "extractVersion": "^v?(?<version>.*)$",
       "datasourceTemplate": "github-releases"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["github-releases", "github-tags"],
+      "extractVersion": "^v(?<version>.*)$"
     }
   ]
 }
