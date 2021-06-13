@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^foreman.toml$"],
+      "matchStrings": [".+ = { source = \"(?<depName>.+)\", version = \"(?<currentValue>.+)\" }"],
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
