@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Feature Request
+    url: https://github.com/Lundstrong/LundstrongOrders/discussions/new
+    about: Suggest an idea for this project.
+  - name: Start a discussion (questions, config and more)
+    url: https://github.com/Lundstrong/LundstrongOrders/discussions/new
+    about: If you have any questions about LundstrongOrders, configuration or doubts about whether you should create a feature request or bug report, or have problems with the documentation please click here to create a Discussion instead of an Issue.
