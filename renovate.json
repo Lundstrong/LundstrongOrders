@@ -12,7 +12,7 @@
   "packageRules": [
     {
       "matchDatasources": ["github-releases", "github-tags"],
-      "extractVersion": "^v(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     }
   ]
 }
