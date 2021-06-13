@@ -5,7 +5,8 @@
   "regexManagers": [
     {
       "fileMatch": ["^foreman.toml$"],
-      "matchStrings": [".+ = { source = \"(?<depName>.+)\", version = \"v?(?<currentValue>.+)\" }"],
+      "matchStrings": [".+ = { source = \"(?<depName>.+)\", version = \"(?<currentValue>.+)\" }"],
+      "extractVersion": "^v?(?<version>.*)$",
       "datasourceTemplate": "github-releases"
     }
   ]
