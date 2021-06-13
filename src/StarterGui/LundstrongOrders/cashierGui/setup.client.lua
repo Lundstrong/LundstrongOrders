@@ -133,12 +133,13 @@ path.cashierGui.usernamePrompt.usernameFrame.usernameText:GetPropertyChangedSign
         local Segment = path.cashierGui.usernamePrompt.usernameFrame.usernameText.Text
         local lowerSegment = string.lower(path.cashierGui.usernamePrompt.usernameFrame.usernameText.Text)
         for _,b in next,Players:GetPlayers() do
-            if string.sub(b.Name:lower(),1,#Segment) == lowerSegment then
+            if string.sub(b.DisplayName:lower(),1,#Segment) == lowerSegment then
                 table.insert(toReturn,b)
             end
         end
         if type(toReturn[1]) == "userdata" then
-            path.cashierGui.usernamePrompt.usernameFrame.usernamePrompt.Text = toReturn[1].Name
+            path.cashierGui.usernamePrompt.usernameFrame.playerName.Value = toReturn[1].Name
+            path.cashierGui.usernamePrompt.usernameFrame.usernamePrompt.Text = toReturn[1].DisplayName
             path.cashierGui.usernamePrompt.usernameFrame.usernameText.Text = string.sub(path.cashierGui.usernamePrompt.usernameFrame.usernamePrompt.Text, 1, string.len(path.cashierGui.usernamePrompt.usernameFrame.usernameText.Text))
         else
             path.cashierGui.usernamePrompt.usernameFrame.usernamePrompt.Text = "" -- No Username
@@ -185,4 +186,4 @@ for i,v in pairs(getTableKeys(config.MenuItems.MenuItems)) do
     end
 end
 -- Username
-path.cashierGui.home.username.Text = game.Players.LocalPlayer.Name
+path.cashierGui.home.username.Text = game.Players.LocalPlayer.DisplayName

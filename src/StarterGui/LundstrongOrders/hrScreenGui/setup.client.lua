@@ -93,7 +93,7 @@ game.ReplicatedStorage.LundstrongOrders.Events.orderList.OnClientEvent:Connect(f
             clone.Parent = path.hrScreenGui.manageOrders.ScrollingFrame
             clone.Visible = true
             clone.Name = "Order"
-            clone.Username.Text = "for "..v.orderReceiver.Name
+            clone.Username.Text = "for "..v.orderReceiver.DisplayName
             clone.ImageFrame.ImageLabel.Image = "rbxthumb://type=Avatar&id="..v.orderReceiver.UserId.."&w=720&h=720"
             clone.orderId.Text = "Order #"..v.id
             local status = "unclaimed"
@@ -217,7 +217,7 @@ path.cashierGui.usernamePrompt.usernameFrame.usernameText:GetPropertyChangedSign
         local Segment = path.cashierGui.usernamePrompt.usernameFrame.usernameText.Text
         local lowerSegment = string.lower(path.cashierGui.usernamePrompt.usernameFrame.usernameText.Text)
         for _,b in next,Players:GetPlayers() do
-            if string.sub(b.Name:lower(),1,#Segment) == lowerSegment then
+            if string.sub(b.DisplayName:lower(),1,#Segment) == lowerSegment then
                 table.insert(toReturn,b)
             end
         end
@@ -233,4 +233,4 @@ path.cashierGui.usernamePrompt.usernameFrame.usernameText:GetPropertyChangedSign
 end) --]]
 
 -- Username
-path.hrScreenGui.home.username.Text = game.Players.LocalPlayer.Name
+path.hrScreenGui.home.username.Text = game.Players.LocalPlayer.DisplayName

@@ -10,7 +10,7 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
         clone.TextLabel.Text = v
     end
     currentOrderId = order.id
-    chefGui.main.username.Text = "Order For: "..order.orderReceiver.Name
+    chefGui.main.username.Text = "Order For: "..order.orderReceiver.DisplayName
 end)
 chefGui.main.Frame.TextButton.MouseButton1Up:Connect(function()
     if (currentOrderId) then

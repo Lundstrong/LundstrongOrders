@@ -34,7 +34,7 @@ local function handlePickUpUI(chefGui)
                     clone.Parent = path.pickupGui.prep
                     clone.Name = "itemFrame"
                     clone.ID.Value = v.id
-                    clone.Frame.username.Text = v.orderReceiver.Name
+                    clone.Frame.username.Text = v.orderReceiver.DisplayName
                     clone.Frame.ImageLabel.Image = "rbxthumb://type=Avatar&id="..v.orderReceiver.UserId.."&w=720&h=720"
                     clone.Frame.orderNumber.Text = "Order #"..v.id
                     clone.Visible = true
