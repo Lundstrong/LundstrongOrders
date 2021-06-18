@@ -69,7 +69,7 @@ local function handleChefUI(chefGui)
                     clone.Parent = path.chefGui.ScrollingFrame
                     clone:WaitForChild("ID").Value = v.id
                     clone.Frame:WaitForChild("TextLabel").Text = v.orderReceiver.DisplayName
-                    clone.Frame:WaitForChild("ImageLabel").Image = "https://www.roblox.com/Thumbs/Avatar.ashx?x=500&y=500&username="..v.orderReceiver.Name
+                    clone.Frame:WaitForChild("ImageLabel").Image = "rbxthumb://type=Avatar&id="..v.orderReceiver.UserId.."&w=720&h=720"
                     clone.Name = "itemFrame"
                     clone.Visible = true
                     clone.Frame.TextButton.Activated:Connect(function()

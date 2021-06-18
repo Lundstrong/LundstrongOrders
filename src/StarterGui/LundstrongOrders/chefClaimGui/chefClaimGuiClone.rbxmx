@@ -420,7 +420,7 @@
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>https://www.roblox.com/Thumbs/Avatar.ashx?x=500&amp;y=500&amp;username=sasial</url></Content>
+								<Content name="Image"><url>rbxthumb://type=Avatar&amp;id=141548605&amp;w=720&amp;h=720</url></Content>
 								<Color3 name="ImageColor3">
 									<R>1</R>
 									<G>1</G>
