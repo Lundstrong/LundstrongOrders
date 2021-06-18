@@ -58,7 +58,7 @@ path.kioskGui.createOrder.buttonFrame.submitOrderButton.MouseButton1Up:Connect(f
             end
         end
         print(items)
-        local orderSubmitted = game.ReplicatedStorage.LundstrongOrders.Events.createOrder:InvokeServer(game.Players.LocalPlayer.Name, items)
+        local orderSubmitted, time = game.ReplicatedStorage.LundstrongOrders.Events.createOrder:InvokeServer(game.Players.LocalPlayer.Name, items)
         if (orderSubmitted == true) then
             for _,v in pairs(path.kioskGui.createOrder.summaryFrame.ScrollingFrame:GetChildren()) do
                 if (v:IsA("TextButton")) then
@@ -71,7 +71,8 @@ path.kioskGui.createOrder.buttonFrame.submitOrderButton.MouseButton1Up:Connect(f
             Nofications:CreateNotification("The order has been submitted!")
         else
             createOrderDebounce = false
-            Nofications:CreateNotification(orderSubmitted)
+            print(time)
+            Nofications:CreateNotification(orderSubmitted, time)
         end
     end
 end)

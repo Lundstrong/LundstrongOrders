@@ -92,7 +92,7 @@ path.cashierGui.usernamePrompt.buttonFrame.submitOrderButton.MouseButton1Up:Conn
             end
         end
         print(items)
-        local orderSubmitted = game.ReplicatedStorage.LundstrongOrders.Events.createOrder:InvokeServer(path.cashierGui.usernamePrompt.usernameFrame.playerName.Value, items)
+        local orderSubmitted, time = game.ReplicatedStorage.LundstrongOrders.Events.createOrder:InvokeServer(path.cashierGui.usernamePrompt.usernameFrame.playerName.Value, items)
         if (orderSubmitted == true) then
             for _,v in pairs(path.cashierGui.createOrder.summaryFrame.ScrollingFrame:GetChildren()) do
                 if (v:IsA("TextButton")) then
@@ -106,7 +106,7 @@ path.cashierGui.usernamePrompt.buttonFrame.submitOrderButton.MouseButton1Up:Conn
             Nofications:CreateNotification("The order has been submitted!")
         else
             createOrderDebounce = false
-            Nofications:CreateNotification(orderSubmitted)
+            Nofications:CreateNotification(orderSubmitted, time)
         end
         tween:Create(path.cashierGui.usernamePrompt, path.cashierGui.createOrder)
     end

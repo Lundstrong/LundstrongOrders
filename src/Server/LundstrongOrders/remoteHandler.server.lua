@@ -12,7 +12,7 @@ DataStore2.Combine("DATA", "points")
 
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("createOrder").OnServerInvoke = function(creator: Player, receiver: string, items: {[number]: string})
     if (not debounce[creator.Name] or debounce[creator.Name] == false) then
-        debounce[creator.Name] = true
+        debounce[creator.Name] = os.time() + config.KioskSettings.OrderCooldown
         local newOrder = Order.new(creator, receiver, items)
         print("NEW ORDER:", newOrder.id)
         game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("orderList"):FireAllClients(Order:GetOrders())
@@ -31,7 +31,7 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
         end
         return true
     else
-        return "Slow down! Your order cooldown hasn't expired!"
+        return "Slow down! Your order cooldown hasn't expired!", os.difftime(debounce[creator.Name], os.time())
     end
 end
 
