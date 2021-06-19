@@ -67,7 +67,7 @@
 				<int64 name="SourceAssetId">-1</int64>
 				<token name="Style">0</token>
 				<BinaryString name="Tags"></BinaryString>
-				<bool name="Visible">false</bool>
+				<bool name="Visible">true</bool>
 				<int name="ZIndex">1</int>
 			</Properties>
 			<Item class="UICorner" referent="RBXBC6FA188276D46C3BCE5444F337E5EFC">
@@ -540,7 +540,7 @@
 						<XS>0</XS>
 						<XO>0</XO>
 						<YS>0</YS>
-						<YO>700</YO>
+						<YO>0</YO>
 					</UDim2>
 					<bool name="ClipsDescendants">true</bool>
 					<bool name="Draggable">false</bool>
@@ -1545,8 +1545,8 @@
 							<UDim2 name="Size">
 								<XS>1</XS>
 								<XO>0</XO>
-								<YS>0.0670000017</YS>
-								<YO>0</YO>
+								<YS>0</YS>
+								<YO>46</YO>
 							</UDim2>
 							<token name="SizeConstraint">0</token>
 							<int64 name="SourceAssetId">-1</int64>
@@ -1622,8 +1622,8 @@
 							<UDim2 name="Size">
 								<XS>1</XS>
 								<XO>0</XO>
-								<YS>0.933000028</YS>
-								<YO>0</YO>
+								<YS>0</YS>
+								<YO>650</YO>
 							</UDim2>
 							<token name="SizeConstraint">0</token>
 							<int64 name="SourceAssetId">-1</int64>
@@ -1634,13 +1634,13 @@ blan_k - Blank has made the base of our UI design, and LundstrongOrders Version 
 
 sasial - Sasial has finished the UI designing off, and has also done the major scripting, and leading the Interns in scripting.
 
-OctoberSparkles - Thank you to October for making a;l our graphics including the LundstrongOrders logo and all of Lundstrong's other branding.
+OctoberSparkles - Thank you to October for making all our graphics including the LundstrongOrders logo and all of Lundstrong's other branding.
 
 Lead Contributors - Thank you to our lead contributors for leading our contributors, and always being a helping hand.
 
 Contributors -  Thank you to our contributors, who have contributed to making this product a reality.
 
-You - The customer, or staff member for using us. ]]></string>
+You - The customer, or staff member for using LundstrongOrders.]]></string>
 							<Color3 name="TextColor3">
 								<R>0</R>
 								<G>0</G>
@@ -1663,6 +1663,22 @@ You - The customer, or staff member for using us. ]]></string>
 							<int name="ZIndex">1</int>
 						</Properties>
 					</Item>
+					<Item class="UIListLayout" referent="RBX7AAB8142D5C44B3298ABAB2D8FA358D6">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<token name="FillDirection">1</token>
+							<token name="HorizontalAlignment">1</token>
+							<string name="Name">UIListLayout</string>
+							<UDim name="Padding">
+								<S>0</S>
+								<O>10</O>
+							</UDim>
+							<token name="SortOrder">2</token>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<token name="VerticalAlignment">1</token>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="UIListLayout" referent="RBXAC1C7C39D4284C11A32C44E1F5DD88A6">
 					<Properties>
@@ -1672,7 +1688,7 @@ You - The customer, or staff member for using us. ]]></string>
 						<string name="Name">UIListLayout</string>
 						<UDim name="Padding">
 							<S>0</S>
-							<O>0</O>
+							<O>20</O>
 						</UDim>
 						<token name="SortOrder">2</token>
 						<int64 name="SourceAssetId">-1</int64>
@@ -2095,7 +2111,7 @@ You - The customer, or staff member for using us. ]]></string>
 				<int64 name="SourceAssetId">-1</int64>
 				<token name="Style">0</token>
 				<BinaryString name="Tags"></BinaryString>
-				<bool name="Visible">false</bool>
+				<bool name="Visible">true</bool>
 				<int name="ZIndex">1</int>
 			</Properties>
 			<Item class="ImageLabel" referent="RBXB21193560B914FF6B9BE27C21050FE92">

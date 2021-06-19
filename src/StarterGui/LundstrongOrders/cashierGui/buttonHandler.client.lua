@@ -149,6 +149,10 @@ path.cashierGui.settings.exitButton.TextButton.MouseButton1Up:Connect(function()
     openBounce = false
     tween:CreateExitTween(path.cashierGui.settings)
 end)
+path.cashierGui.settings.content.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+	local absoluteSize = path.cashierGui.settings.content.UIListLayout.AbsoluteContentSize
+	path.cashierGui.settings.content.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y)
+end)
   -- viewMenu
 path.cashierGui.viewMenu.homeIcon.MouseButton1Up:Connect(function()
     tween:Create(path.cashierGui.viewMenu, path.cashierGui.home)
