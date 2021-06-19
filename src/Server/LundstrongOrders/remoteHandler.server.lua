@@ -12,24 +12,28 @@ DataStore2.Combine("DATA", "points")
 
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("createOrder").OnServerInvoke = function(creator: Player, receiver: string, items: {[number]: string})
     if (not debounce[creator.Name] or debounce[creator.Name] == false) then
-        debounce[creator.Name] = os.time() + config.KioskSettings.OrderCooldown
-        local newOrder = Order.new(creator, receiver, items)
-        print("NEW ORDER:", newOrder.id)
-        game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("orderList"):FireAllClients(Order:GetOrders())
-        apiEvents.orderCreated:Fire(newOrder)
-        if (creator.Name ~= receiver) then -- Cashier GUI order
-            game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(newOrder.orderReceiver, creator.Name.." has created an order for you.", 10)
-            coroutine.resume(coroutine.create(function()
-                wait(config.CashierSettings.OrderCooldown)
-                debounce[creator.Name] = false
-            end))
-        else -- Kiosk Order
-            coroutine.resume(coroutine.create(function()
-                wait(config.KioskSettings.OrderCooldown)
-                debounce[creator.Name] = false
-            end))
+        if (items[1]) then
+            debounce[creator.Name] = os.time() + config.KioskSettings.OrderCooldown
+            local newOrder = Order.new(creator, receiver, items)
+            print("NEW ORDER:", newOrder.id)
+            game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("orderList"):FireAllClients(Order:GetOrders())
+            apiEvents.orderCreated:Fire(newOrder)
+            if (creator.Name ~= receiver) then -- Cashier GUI order
+                game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(newOrder.orderReceiver, creator.Name.." has created an order for you.", 10)
+                coroutine.resume(coroutine.create(function()
+                    wait(config.CashierSettings.OrderCooldown)
+                    debounce[creator.Name] = false
+                end))
+            else -- Kiosk Order
+                coroutine.resume(coroutine.create(function()
+                    wait(config.KioskSettings.OrderCooldown)
+                    debounce[creator.Name] = false
+                end))
+            end
+            return true
+        else
+            return "You cannot submit an empty order!", 5
         end
-        return true
     else
         return "Slow down! Your order cooldown hasn't expired!", os.difftime(debounce[creator.Name], os.time())
     end
