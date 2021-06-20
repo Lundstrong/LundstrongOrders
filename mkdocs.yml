@@ -38,6 +38,7 @@ nav:
 
 plugins:
   - search
+  - git-revision-date
 
 extra_css:
   - extra.css
