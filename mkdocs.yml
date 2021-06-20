@@ -13,9 +13,9 @@ theme:
     - navigation.tabs
     - navigation.top
   favicon: favicon.ico
-  extra:
-    version:
-      provider: mike
+extra:
+  version:
+    provider: mike
 
 nav:
   - Home: index.md
