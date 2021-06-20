@@ -1,0 +1,62 @@
+site_name: LundstrongOrders Documentation
+site_description: Documentation of LundstrongOrders.
+site_url: https://lundstrong.github.io/LundstrongOrders
+repo_name: Lundstrong Documentation
+repo_url: https://github.com/Lundstrong/LundstrongOrders
+
+theme:
+  name: material
+  palette:
+    primary: red
+    accent: red
+  features:
+    - navigation.tabs
+    - navigation.top
+  favicon: favicon.ico
+  extra:
+    version:
+      provider: mike
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Feature Comparison: getting-started/compare-features.md
+    - License: getting-started/license.md
+  - Reference:
+    - Configuration: reference/configuration.md
+    - Menu Items: reference/menuitems.md
+    - Simple Modifications: reference/modify-simple.md
+  - API:
+    - Installation: api/installation.md
+  - Typescript:
+    - Api Support: typescript/api-support.md
+  - Contributing:
+     - Setup: contributing/setup.md
+     - Modifying the GUI: contributing/how-to-modify-gui.md
+     - Style Guide: contributing/style-guide.md
+
+plugins:
+  - search
+
+extra_css:
+  - extra.css
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
