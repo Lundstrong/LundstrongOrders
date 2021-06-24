@@ -24,6 +24,15 @@ chefGui.main.Frame.TextButton.MouseButton1Up:Connect(function()
         currentOrderId = false
     end
 end)
+game.ReplicatedStorage.LundstrongOrders.Events.orderDeleted.OnClientEvent:Connect(function()
+    chefGui.Enabled = false
+    for _,v in pairs(chefGui.main.Items.ScrollingFrame:GetChildren()) do
+        if (v.Name == "itemFrame") then
+            v:Destroy()
+        end
+    end
+    currentOrderId = false
+end)
 chefGui.main.Items.ScrollingFrame.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 	local absoluteSize = chefGui.main.Items.ScrollingFrame.UIListLayout.AbsoluteContentSize
 	chefGui.main.Items.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y)

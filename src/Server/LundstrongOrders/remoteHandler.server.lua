@@ -173,6 +173,9 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
                     if (actioner:GetRankInGroup(config.hrScreenSettings.GroupID) >= config.hrScreenSettings.MinimumRank) then
                         v:Complete()
                         -- apiEvents.orderCompleted:Fire(v) --? Do we do this?
+                        if (v.isClaimed) then
+                            game.ReplicatedStorage.LundstrongOrders.Events.orderDeleted:FireClient(v.orderClaimer)
+                        end
                         game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been deleted by "..actioner.Name, 20)
                         orderFound = v
                     end
@@ -180,6 +183,9 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
                     if (table.find(config.hrScreenSettings.RankTable, actioner:GetRankInGroup(config.hrScreenSettings.GroupID))) then
                         v:Complete()
                         -- apiEvents.orderCompleted:Fire(v) --? Do we do this?
+                        if (v.isClaimed) then
+                            game.ReplicatedStorage.LundstrongOrders.Events.orderDeleted:FireClient(v.orderClaimer)
+                        end
                         game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been deleted by "..actioner.Name, 20)
                         orderFound = v
                     end
@@ -187,6 +193,9 @@ game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):W
             else
                 v:Complete()
                 -- apiEvents.orderCompleted:Fire(v) --? Do we do this?
+                if (v.isClaimed) then
+                    game.ReplicatedStorage.LundstrongOrders.Events.orderDeleted:FireClient(v.orderClaimer)
+                end
                 game.ReplicatedStorage.LundstrongOrders.Events.sendNotification:FireClient(v.orderReceiver, "Your order has been deleted by "..actioner.Name, 20)
                 orderFound = v
             end

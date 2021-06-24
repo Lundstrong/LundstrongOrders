@@ -26,6 +26,10 @@
         "ClassName": "RemoteEvent"
     },
     {
+        "Name": "orderDeleted",
+        "ClassName": "RemoteEvent"
+    },
+    {
         "Name": "removeOrder",
         "ClassName": "RemoteFunction"
     }
