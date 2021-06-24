@@ -139,6 +139,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-# TEMP
-.github/workflows/
