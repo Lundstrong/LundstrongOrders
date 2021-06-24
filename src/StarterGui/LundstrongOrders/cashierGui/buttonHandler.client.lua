@@ -113,11 +113,11 @@ path.cashierGui.usernamePrompt.buttonFrame.submitOrderButton.MouseButton1Up:Conn
 end)
 path.cashierGui.usernamePrompt.exitButton.MouseButton1Up:Connect(function()
     openBounce = false
-    tween:CreateExitTween(path.cashierGui.reportBugs)
+    tween:CreateExitTween(path.cashierGui.usernamePrompt)
 end)
 path.cashierGui.usernamePrompt.exitButton.TextButton.MouseButton1Up:Connect(function()
     openBounce = false
-    tween:CreateExitTween(path.cashierGui.reportBugs)
+    tween:CreateExitTween(path.cashierGui.usernamePrompt)
 end)
   -- reportBugs
 path.cashierGui.reportBugs.homeIcon.MouseButton1Up:Connect(function()
