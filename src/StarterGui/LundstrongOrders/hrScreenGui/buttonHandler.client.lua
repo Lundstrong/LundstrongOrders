@@ -98,6 +98,10 @@ path.hrScreenGui.manageOrders.ScrollingFrame.UIListLayout:GetPropertyChangedSign
 	local absoluteSize = path.hrScreenGui.manageOrders.ScrollingFrame.UIListLayout.AbsoluteContentSize
 	path.hrScreenGui.manageOrders.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y)
 end)
+path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+	local absoluteSize = path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame.UIListLayout.AbsoluteContentSize
+	path.hrScreenGui.modal.orderOptions.menuItems.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y)
+end)
 -- * Fade IN
 game.ReplicatedStorage:WaitForChild("LundstrongOrders"):WaitForChild("Events"):WaitForChild("enableGui").OnClientEvent:Connect(function(gui)
     if (gui == "hrScreenGui") then
