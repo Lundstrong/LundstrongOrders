@@ -4,13 +4,17 @@ LundstrongOrders is an open source ordering system. If you aren't wanting to dev
 
 LundstrongOrders can be installed from Roblox:
 
+=== "Command Bar"
+
+    Go to the Command Bar in Roblox Studio (will be at the bottom of your screen), and paste in the following:
+    ```lua
+    local m=game:GetObjects("rbxassetid://6607872660")[1];m.Parent=game:GetService("Workspace");game:GetService("Selection"):Set({p})
+    ```
+
 === "Toolbox"
 
     * Search `Lundstrong Orders` in the toolbox, and insert the model made by `LundBot`
 
-=== "Install from Link"
-
-    [Click Here](https://roblox.com) to get the link to download the model.
 
 ### from GitHub
 
