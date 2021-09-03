@@ -1,0 +1,33 @@
+{
+	"name": "LundstrongOrders Development",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"$ignoreUnknownInstances": true,
+			"LundstrongOrders": {
+				"$path": "out/ReplicatedStorage",
+				"include": {
+					"$path": "include",
+					"node_modules": {
+						"$path": "node_modules/@rbxts"
+					}
+				}
+			}
+		},
+		"StarterGui": {
+			"$className": "StarterGui",
+			"$ignoreUnknownInstances": true,
+			"LundstrongOrders": {
+				"$path": "out/StarterGui"
+			}
+		},
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"$ignoreUnknownInstances": true,
+			"LundstrongOrders": {
+				"$path": "out/ServerScriptService"
+			}
+		}
+	}
+}

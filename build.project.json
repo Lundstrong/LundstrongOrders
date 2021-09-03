@@ -1,0 +1,21 @@
+{
+	"name": "MainModule",
+	"tree": {
+		"$path": "out/Packaging",
+		"ReplicatedStorage": {
+			"$path": "out/ReplicatedStorage",
+			"include": {
+				"$path": "include",
+				"node_modules": {
+					"$path": "node_modules/@rbxts"
+				}
+			}
+		},
+		"StarterGui": {
+			"$path": "out/StarterGui"
+		},
+		"ServerScriptService": {
+			"$path": "out/ServerScriptService"
+		}
+	}
+}

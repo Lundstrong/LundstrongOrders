@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build & Watch",
+        "type": "npm",
+        "script": "build:watch",
+        "detail": "concurrently -c cyan,yellow -n Typescript,Roblox-ts,rbxmx-to-ts -s first -k \"rbxtsc -w\" \"rbxmxc -w\"",
+        "problemMatcher": [
+          "$tsc-watch"
+        ],
+        "isBackground": true
+      },
+      {
+        "label": "Build",
+        "type": "npm",
+        "script": "build",
+        "detail": "rbxtsc && rbxmxc",
+        "problemMatcher": [
+          "$tsc-watch"
+        ],
+        "isBackground": true
+      }
+    ]
+  }
