@@ -2,28 +2,52 @@ import { Definitions, Middleware } from "@rbxts/net";
 import { RateLimitError } from "@rbxts/net/out/middleware/RateLimitMiddleware";
 import { Players } from "@rbxts/services";
 import { t } from "@rbxts/t";
-import { getAllItems } from "./config";
-import { Error, Notification } from "./structures";
+import { $warn } from "rbxts-transform-debug";
+import { getAllItems, getConfig } from "./config";
+import { Error, Notification, Order } from "./structures";
+
+const isOrder: t.check<Order> = (value): value is Order => value instanceof Order;
+
+const onRateLimitError = (errorData: RateLimitError, userfacingEventName: string): void => {
+	const player = Players.GetPlayerByUserId(errorData.UserId);
+	if (player) {
+		// error handler is always on the server :)
+		$warn(`Cooldown for ${userfacingEventName} hasn't expired for ${errorData.UserId}`);
+		remotes.Server.Create("SendNotification").SendToPlayer(
+			player,
+			new Error(`Slow down! Your cooldown hasn't expired for ${userfacingEventName}.`, 0xc),
+		);
+	}
+};
 
 export const remotes = Definitions.Create({
 	CreateOrder: Definitions.ServerFunction<(receiver: string, items: string[]) => Notification | Error>([
 		Middleware.TypeChecking(t.string, t.array(t.valueOf(getAllItems()))),
 		Middleware.RateLimit({
-			MaxRequestsPerMinute: 1 / 6,
-			ErrorHandler: function (errorData: RateLimitError) {
-				const player = Players.GetPlayerByUserId(errorData.UserId);
-				if (player) {
-					// error handler is always on the server :)
-					remotes.Server.Create("Notification").SendToPlayer(
-						player,
-						new Error(
-							"The rate limit has been reached for the amount of orders that you can create per minute.",
-							1,
-						),
-					);
-				}
-			},
+			MaxRequestsPerMinute: getConfig().Cooldowns.OrderCooldown / 60,
+			ErrorHandler: (errorData) => onRateLimitError(errorData, "creating orders"),
 		}),
 	]),
-	Notification: Definitions.ServerToClientEvent<[Notification: Notification | Error]>(),
+	ClaimOrder: Definitions.ServerFunction<(order: Order) => Notification | Error>([
+		Middleware.TypeChecking(isOrder),
+		Middleware.RateLimit({
+			MaxRequestsPerMinute: getConfig().Cooldowns.ClaimCooldown / 60,
+			ErrorHandler: (errorData) => onRateLimitError(errorData, "claiming orders"),
+		}),
+	]),
+	CompleteOrder: Definitions.ServerFunction<(order: Order) => Notification | Error>([
+		Middleware.TypeChecking(isOrder),
+		Middleware.RateLimit({
+			MaxRequestsPerMinute: getConfig().Cooldowns.CompleteCooldown / 60,
+			ErrorHandler: (errorData) => onRateLimitError(errorData, "completing orders"),
+		}),
+	]),
+	DeleteOrder: Definitions.ServerFunction<(order: Order) => Notification | Error>([
+		Middleware.TypeChecking(isOrder),
+		Middleware.RateLimit({
+			MaxRequestsPerMinute: getConfig().Cooldowns.DeleteOrderCooldown / 60,
+			ErrorHandler: (errorData) => onRateLimitError(errorData, "deleting orders"),
+		}),
+	]),
+	SendNotification: Definitions.ServerToClientEvent<[Notification: Notification | Error]>(),
 });

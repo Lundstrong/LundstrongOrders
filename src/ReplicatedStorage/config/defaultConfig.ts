@@ -5,8 +5,13 @@ export const defaultConfig: ConfigSchema = {
 		Name: game.Name,
 		imageId: "rbxassetid://952441662",
 	},
-	CashierGuiSettings: {
+	Cooldowns: {
 		OrderCooldown: 7,
+		ClaimCooldown: 20,
+		CompleteCooldown: 20,
+		DeleteOrderCooldown: 60,
+	},
+	CashierGuiSettings: {
 		GroupId: false,
 		MinimumRankEnabled: false,
 		MinimumRank: 0,
@@ -21,7 +26,6 @@ export const defaultConfig: ConfigSchema = {
 	KioskSettings: {
 		GamepassRequired: false,
 		GamepassID: 0,
-		OrderCooldown: 7,
 		PromptPurchase: true,
 	},
 	hrScreenSettings: {
