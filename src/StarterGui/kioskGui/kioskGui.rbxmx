@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="ScreenGui" referent="RBX668D520031B841829E4512F172F93375">
+	<Item class="ScreenGui" referent="RBX15948BBDA3F44331B4F606C76AA60F0B">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<bool name="AutoLocalize">true</bool>
@@ -16,12 +16,12 @@
 			<BinaryString name="Tags"></BinaryString>
 			<token name="ZIndexBehavior">1</token>
 		</Properties>
-		<Item class="Frame" referent="RBXFD6598BF606F41AAA597A6316E2D179E">
+		<Item class="Frame" referent="RBX81850088EB084012BD75D20081D35BD3">
 			<Properties>
 				<bool name="Active">true</bool>
 				<Vector2 name="AnchorPoint">
-					<X>0</X>
-					<Y>0</Y>
+					<X>0.5</X>
+					<Y>0.5</Y>
 				</Vector2>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="AutoLocalize">true</bool>
@@ -48,9 +48,9 @@
 				<Ref name="NextSelectionRight">null</Ref>
 				<Ref name="NextSelectionUp">null</Ref>
 				<UDim2 name="Position">
-					<XS>0.200000003</XS>
+					<XS>0.5</XS>
 					<XO>0</XO>
-					<YS>0.200000003</YS>
+					<YS>0.5</YS>
 					<YO>0</YO>
 				</UDim2>
 				<Ref name="RootLocalizationTable">null</Ref>
@@ -58,10 +58,10 @@
 				<bool name="Selectable">false</bool>
 				<Ref name="SelectionImageObject">null</Ref>
 				<UDim2 name="Size">
-					<XS>0.67234385</XS>
-					<XO>0</XO>
-					<YS>0.580814719</YS>
-					<YO>0</YO>
+					<XS>0</XS>
+					<XO>936</XO>
+					<YS>0</YS>
+					<YO>489</YO>
 				</UDim2>
 				<token name="SizeConstraint">0</token>
 				<int64 name="SourceAssetId">-1</int64>
@@ -70,7 +70,7 @@
 				<bool name="Visible">true</bool>
 				<int name="ZIndex">1</int>
 			</Properties>
-			<Item class="UICorner" referent="RBX026F7766A22F496FB8A085CA78500A4C">
+			<Item class="UICorner" referent="RBX0C893D0586C6435FA782429CA13F10E9">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<UDim name="CornerRadius">
@@ -82,7 +82,7 @@
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ImageLabel" referent="RBX8BE14B5C6F1A40619A58E5355C92E31B">
+			<Item class="ImageLabel" referent="RBX65CCAB525099411189E7EF07C1068C29">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -134,6 +134,7 @@
 						<YS>0</YS>
 						<YO>0</YO>
 					</UDim2>
+					<token name="ResampleMode">0</token>
 					<Ref name="RootLocalizationTable">null</Ref>
 					<float name="Rotation">0</float>
 					<token name="ScaleType">0</token>
@@ -169,7 +170,7 @@
 					<int name="ZIndex">1</int>
 				</Properties>
 			</Item>
-			<Item class="ImageLabel" referent="RBX19E21AEC71314710971C9CD6841479A6">
+			<Item class="ImageLabel" referent="RBXB340EDF54E33485DB17788A9DC5B6B36">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -221,6 +222,7 @@
 						<YS>0</YS>
 						<YO>0</YO>
 					</UDim2>
+					<token name="ResampleMode">0</token>
 					<Ref name="RootLocalizationTable">null</Ref>
 					<float name="Rotation">0</float>
 					<token name="ScaleType">0</token>
@@ -256,7 +258,7 @@
 					<int name="ZIndex">6</int>
 				</Properties>
 			</Item>
-			<Item class="TextButton" referent="RBX0D81F1A8B4E44CEE9E48410715BFC66E">
+			<Item class="TextButton" referent="RBX02C9CA9C15AD498AB577D81654FB83F2">
 				<Properties>
 					<bool name="Active">true</bool>
 					<Vector2 name="AnchorPoint">
@@ -336,7 +338,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">4</int>
 				</Properties>
-				<Item class="UICorner" referent="RBX3D8BFFB5F2694C9C94F5ACBCF2B4E130">
+				<Item class="UICorner" referent="RBXFB6014797DE5472E935AAC519A229AE8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -348,7 +350,7 @@
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="TextButton" referent="RBX60CD7A23E0A14B3A971E6FB64D769EF6">
+				<Item class="TextButton" referent="RBXF2D11D75A3CE4108931C2866A49DDE0B">
 					<Properties>
 						<bool name="Active">true</bool>
 						<Vector2 name="AnchorPoint">
@@ -430,7 +432,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="TextLabel" referent="RBX6FA5B03DB4C94E08B3487A36A6D0CC3E">
+			<Item class="TextLabel" referent="RBXEA13F7C401524155B11AD0208700875F">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -507,7 +509,7 @@
 					<int name="ZIndex">1</int>
 				</Properties>
 			</Item>
-			<Item class="ScrollingFrame" referent="RBX08E0656CC7BA4291A4087177158DB703">
+			<Item class="ScrollingFrame" referent="RBXE0DBB4A54719433CBE53A729B9FD0F9B">
 				<Properties>
 					<bool name="Active">true</bool>
 					<Vector2 name="AnchorPoint">
@@ -587,7 +589,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">1</int>
 				</Properties>
-				<Item class="UIGridLayout" referent="RBXCD1BF794FAC54E34B02625C8E11C9AC5">
+				<Item class="UIGridLayout" referent="RBX2A18B21DBE2E47DB97357409CA71E845">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim2 name="CellPadding">
@@ -613,7 +615,7 @@
 						<token name="VerticalAlignment">1</token>
 					</Properties>
 				</Item>
-				<Item class="TextButton" referent="RBX79AC7E0827B142719A290EBC3BC8E9E4">
+				<Item class="TextButton" referent="RBX7B46F079F468493BA38EFAB4585D2F4B">
 					<Properties>
 						<bool name="Active">false</bool>
 						<Vector2 name="AnchorPoint">
@@ -693,7 +695,7 @@
 						<bool name="Visible">false</bool>
 						<int name="ZIndex">1</int>
 					</Properties>
-					<Item class="UICorner" referent="RBX5600BBFB4E2D44F8ABB35F52187D25B3">
+					<Item class="UICorner" referent="RBXFED4EAF7BC234093A85D4FFEA371DEAE">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<UDim name="CornerRadius">
@@ -705,7 +707,7 @@
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="TextButton" referent="RBXBD1A2C7DC74540D68F4C0ED20A32AC1B">
+					<Item class="TextButton" referent="RBX8BC4B8725BA74717BC5CCBC862725E43">
 						<Properties>
 							<bool name="Active">false</bool>
 							<Vector2 name="AnchorPoint">
@@ -788,7 +790,7 @@
 					</Item>
 				</Item>
 			</Item>
-			<Item class="Frame" referent="RBXA59FF3FA329C43D1AED3C79336756896">
+			<Item class="Frame" referent="RBX88A500178A5F46E7A2E1844A6B716FE5">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -842,7 +844,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">1</int>
 				</Properties>
-				<Item class="UICorner" referent="RBXD22635EA28BC4A3786F8C8942DF41C29">
+				<Item class="UICorner" referent="RBX4DE13B4FDCC44A36B87B87321F4CA7AB">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -854,7 +856,7 @@
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="TextLabel" referent="RBX2FCEB6A1EF3F4FC5ACCEF6220211308F">
+				<Item class="TextLabel" referent="RBX9F447A1055CF47CDBCE8CE46C9E70FAD">
 					<Properties>
 						<bool name="Active">false</bool>
 						<Vector2 name="AnchorPoint">
@@ -931,7 +933,7 @@
 						<int name="ZIndex">1</int>
 					</Properties>
 				</Item>
-				<Item class="ScrollingFrame" referent="RBX572D1455A6964922A04A69484C0D799C">
+				<Item class="ScrollingFrame" referent="RBXDA6659E3F47F487D958F50A0D7EA4D37">
 					<Properties>
 						<bool name="Active">true</bool>
 						<Vector2 name="AnchorPoint">
@@ -1011,7 +1013,7 @@
 						<bool name="Visible">true</bool>
 						<int name="ZIndex">1</int>
 					</Properties>
-					<Item class="UIGridLayout" referent="RBXA00515A1AFB840CE8D6B887168DCC00E">
+					<Item class="UIGridLayout" referent="RBX3DFEE6D6C3AE4D6E816B7DAE072680DF">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<UDim2 name="CellPadding">
@@ -1037,7 +1039,7 @@
 							<token name="VerticalAlignment">1</token>
 						</Properties>
 					</Item>
-					<Item class="TextButton" referent="RBXD7EB0ABFCA7E40FBA2B3D44BB3070F74">
+					<Item class="TextButton" referent="RBX65CE568B0ED04AB7ADA262BFE17714E8">
 						<Properties>
 							<bool name="Active">false</bool>
 							<Vector2 name="AnchorPoint">
@@ -1117,7 +1119,7 @@
 							<bool name="Visible">false</bool>
 							<int name="ZIndex">1</int>
 						</Properties>
-						<Item class="UICorner" referent="RBXA9605A87893D4D4D98C2B970A0692BD5">
+						<Item class="UICorner" referent="RBXD4F6F730238946D1BEEE7C1719B9DA24">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
 								<UDim name="CornerRadius">
@@ -1129,7 +1131,7 @@
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextButton" referent="RBX9F689A4A137B4AB69F9F751529FB5614">
+						<Item class="TextButton" referent="RBX1CC72BFA20AA453FB60102CB17E1AE62">
 							<Properties>
 								<bool name="Active">false</bool>
 								<Vector2 name="AnchorPoint">
@@ -1212,7 +1214,7 @@
 						</Item>
 					</Item>
 				</Item>
-				<Item class="TextLabel" referent="RBX2648CF972BA54DC1B72CCD49C4D45909">
+				<Item class="TextLabel" referent="RBX16B9E0ADC57641A1B8B4463FB515FE9E">
 					<Properties>
 						<bool name="Active">false</bool>
 						<Vector2 name="AnchorPoint">
@@ -1290,7 +1292,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Frame" referent="RBX1D9400F797494BE686B451286FA39DFB">
+			<Item class="Frame" referent="RBX3A6A8E66351E4BFDA0C0F09735B57898">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -1344,7 +1346,7 @@
 					<bool name="Visible">false</bool>
 					<int name="ZIndex">4</int>
 				</Properties>
-				<Item class="UICorner" referent="RBX614F7AF26E094E70AF45122C439A7A54">
+				<Item class="UICorner" referent="RBX5FFF3EC559DE4FAEB86C9A9FA873E4D2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -1356,7 +1358,7 @@
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ScrollingFrame" referent="RBX083E2FDF77884F05845F460E613D3ED9">
+				<Item class="ScrollingFrame" referent="RBXD5D45F237FDB4D2FAB1A8C7108C31382">
 					<Properties>
 						<bool name="Active">false</bool>
 						<Vector2 name="AnchorPoint">
@@ -1436,7 +1438,7 @@
 						<bool name="Visible">true</bool>
 						<int name="ZIndex">4</int>
 					</Properties>
-					<Item class="UIListLayout" referent="RBX8B2E81DE1DF24EEF988F8D64EAE600CB">
+					<Item class="UIListLayout" referent="RBX6C3E0ECC57834FDDA9C5F832AAB9E9FC">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<token name="FillDirection">1</token>
@@ -1452,7 +1454,7 @@
 							<token name="VerticalAlignment">1</token>
 						</Properties>
 					</Item>
-					<Item class="TextButton" referent="RBX2A8A3D666FF8466BB6D83E95CF74849D">
+					<Item class="TextButton" referent="RBX5B369FFE76314E8199CC08C1AF910A96">
 						<Properties>
 							<bool name="Active">false</bool>
 							<Vector2 name="AnchorPoint">
@@ -1532,7 +1534,7 @@
 							<bool name="Visible">true</bool>
 							<int name="ZIndex">3</int>
 						</Properties>
-						<Item class="UICorner" referent="RBXCA95BAD7B5614608811D3538B87FE5F2">
+						<Item class="UICorner" referent="RBXA2FBEAC6606942A5B41BB6F56965F2AA">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
 								<UDim name="CornerRadius">
@@ -1544,7 +1546,7 @@
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="TextButton" referent="RBXAE5128144BBC479DB72FA83C4F473AEE">
+						<Item class="TextButton" referent="RBX846E54ABE2954283AD9F480B27B7735A">
 							<Properties>
 								<bool name="Active">true</bool>
 								<Vector2 name="AnchorPoint">
@@ -1625,7 +1627,7 @@
 								<int name="ZIndex">1</int>
 							</Properties>
 						</Item>
-						<Item class="ImageButton" referent="RBX8BEC75B5594048849875E3A985ACA052">
+						<Item class="ImageButton" referent="RBXCF816E0352C9495CB2FE77C8277377A0">
 							<Properties>
 								<bool name="Active">false</bool>
 								<Vector2 name="AnchorPoint">
@@ -1681,6 +1683,7 @@
 									<YO>0</YO>
 								</UDim2>
 								<Content name="PressedImage"><null></null></Content>
+								<token name="ResampleMode">0</token>
 								<Ref name="RootLocalizationTable">null</Ref>
 								<float name="Rotation">90</float>
 								<token name="ScaleType">0</token>
@@ -1721,7 +1724,7 @@
 					</Item>
 				</Item>
 			</Item>
-			<Item class="Frame" referent="RBX6214751E75084F17B2BA7BB16A2EC53E">
+			<Item class="Frame" referent="RBXB4210DF663A845408149E1B31D8787EB">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -1775,7 +1778,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">5</int>
 				</Properties>
-				<Item class="UICorner" referent="RBXD2CC895B094E4C08AFFF89FDFA8CDFE3">
+				<Item class="UICorner" referent="RBX9B434FD7BE4E48AEA2A6501DEAB08037">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -1788,7 +1791,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Frame" referent="RBXD6711C60742A46A087E9633B302AF236">
+			<Item class="Frame" referent="RBX01494BA5799845A18EF17BBCE1377175">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -1842,7 +1845,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">3</int>
 				</Properties>
-				<Item class="UICorner" referent="RBX565117E6A32E4BEB971AE38EBBE34E4D">
+				<Item class="UICorner" referent="RBX54D9AAD6CDF04593AEAA51A8407A35C4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -1855,7 +1858,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="TextButton" referent="RBX25E8653DC44E46D799E3E620659C0537">
+			<Item class="TextButton" referent="RBX3945F836508B4D67BF4CE8F759781A8D">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -1935,7 +1938,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">3</int>
 				</Properties>
-				<Item class="UICorner" referent="RBX8DA14DEE14114F21B5668DC55D046B92">
+				<Item class="UICorner" referent="RBX4F243077F8EB4AF7A2AFFB5C94839B8D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -1947,7 +1950,7 @@
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ImageButton" referent="RBXF531BA05A0684F71B183BF3DFB233D61">
+				<Item class="ImageButton" referent="RBX7005875FE87C420BBC8F459D1FC5B126">
 					<Properties>
 						<bool name="Active">false</bool>
 						<Vector2 name="AnchorPoint">
@@ -2003,6 +2006,7 @@
 							<YO>0</YO>
 						</UDim2>
 						<Content name="PressedImage"><null></null></Content>
+						<token name="ResampleMode">0</token>
 						<Ref name="RootLocalizationTable">null</Ref>
 						<float name="Rotation">90</float>
 						<token name="ScaleType">0</token>
@@ -2040,7 +2044,7 @@
 						<int name="ZIndex">1</int>
 					</Properties>
 				</Item>
-				<Item class="TextButton" referent="RBX6F542636FD184D66B7960F5FC4B2B48E">
+				<Item class="TextButton" referent="RBX50A375C55802445882A389C34794344E">
 					<Properties>
 						<bool name="Active">true</bool>
 						<Vector2 name="AnchorPoint">
@@ -2122,7 +2126,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Frame" referent="RBXD4AE2060688740DA87A46717D40C8875">
+			<Item class="Frame" referent="RBXD920D3B23EE7411AB23ACA819646DA13">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -2176,7 +2180,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">2</int>
 				</Properties>
-				<Item class="UICorner" referent="RBX9F8B29667391486FA8299EF7CC3606B5">
+				<Item class="UICorner" referent="RBX1971B22076224ACB8ABEB3C3309FADA7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<UDim name="CornerRadius">
@@ -2188,7 +2192,7 @@
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="TextButton" referent="RBX497C585A17A34AF98C97DF565BCE00E1">
+				<Item class="TextButton" referent="RBX0D6CEC72618C417AAD35C5F600C6AD2F">
 					<Properties>
 						<bool name="Active">true</bool>
 						<Vector2 name="AnchorPoint">
@@ -2269,7 +2273,7 @@
 						<int name="ZIndex">1</int>
 					</Properties>
 				</Item>
-				<Item class="TextButton" referent="RBXA97224564C1942C290A62486E5A3157B">
+				<Item class="TextButton" referent="RBX20E3C5938B034D648336D0D53C3C7FB5">
 					<Properties>
 						<bool name="Active">true</bool>
 						<Vector2 name="AnchorPoint">
@@ -2351,18 +2355,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="UIAspectRatioConstraint" referent="RBXCE8ED23B18B84137B62C2A875C177259">
-				<Properties>
-					<float name="AspectRatio">1.88165009</float>
-					<token name="AspectType">0</token>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<token name="DominantAxis">0</token>
-					<string name="Name">UIAspectRatioConstraint</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-			<Item class="ImageLabel" referent="RBX86577BE1CE874274B18E4D830D52BCC6">
+			<Item class="ImageLabel" referent="RBX0FFCF63572C84AED8FF9D86E64F97801">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -2414,6 +2407,7 @@
 						<YS>0.0299999993</YS>
 						<YO>0</YO>
 					</UDim2>
+					<token name="ResampleMode">0</token>
 					<Ref name="RootLocalizationTable">null</Ref>
 					<float name="Rotation">0</float>
 					<token name="ScaleType">0</token>
@@ -2448,7 +2442,7 @@
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">1</int>
 				</Properties>
-				<Item class="UIAspectRatioConstraint" referent="RBX53D267F5C77C4A889DE3D1D787C38CF4">
+				<Item class="UIAspectRatioConstraint" referent="RBX5EEA848E49374B2681A6B6E74B347606">
 					<Properties>
 						<float name="AspectRatio">3.53800011</float>
 						<token name="AspectType">0</token>
@@ -2457,6 +2451,37 @@
 						<string name="Name">UIAspectRatioConstraint</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="UIScale" referent="RBX2A980F9D81134A9696BF9F49EE4677CD">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">UIScale</string>
+					<float name="Scale">1</float>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="NumberValue" referent="RBX691731F6DB83465FBC8E537979AD761B">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Scale</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<double name="Value">0.80000000000000004441</double>
+					</Properties>
+				</Item>
+				<Item class="Vector3Value" referent="RBXF7BCE5ED03A0423CB79EE16B11B8B2AB">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Size</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Vector3 name="Value">
+							<X>936</X>
+							<Y>489</Y>
+							<Z>0</Z>
+						</Vector3>
 					</Properties>
 				</Item>
 			</Item>

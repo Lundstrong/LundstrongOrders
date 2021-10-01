@@ -5,7 +5,6 @@
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
             "LundstrongOrders": {
-                "$ignoreUnknownInstances": true,
                 "$path": "out/ReplicatedStorage",
                 "include": {
                     "$path": "include",
@@ -18,14 +17,12 @@
         "StarterGui": {
             "$className": "StarterGui",
             "LundstrongOrders": {
-                "$ignoreUnknownInstances": true,
                 "$path": "out/StarterGui"
             }
         },
         "ServerScriptService": {
             "$className": "ServerScriptService",
             "LundstrongOrders": {
-                "$ignoreUnknownInstances": true,
                 "$path": "out/ServerScriptService"
             }
         }

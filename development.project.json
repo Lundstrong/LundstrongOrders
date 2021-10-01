@@ -4,7 +4,6 @@
 		"$className": "DataModel",
 		"ReplicatedStorage": {
 			"$className": "ReplicatedStorage",
-			"$ignoreUnknownInstances": true,
 			"LundstrongOrders": {
 				"$path": "out/ReplicatedStorage",
 				"include": {
@@ -17,14 +16,12 @@
 		},
 		"StarterGui": {
 			"$className": "StarterGui",
-			"$ignoreUnknownInstances": true,
 			"LundstrongOrders": {
 				"$path": "out/StarterGui"
 			}
 		},
 		"ServerScriptService": {
 			"$className": "ServerScriptService",
-			"$ignoreUnknownInstances": true,
 			"LundstrongOrders": {
 				"$path": "out/ServerScriptService"
 			}
