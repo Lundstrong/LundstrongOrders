@@ -20,11 +20,9 @@
 		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo",
 		"plugins": [
 			{
-				"transform": "rbxts-transform-debug",
+				"transform": "@lundstrong/rbxts-transform-debug",
 				"enabled": true,
-				"environmentRequires": {
-					//"NODE_ENV": "development"
-				}
+				"scope": "LundstrongOrders",
 			}
 		]
 	}

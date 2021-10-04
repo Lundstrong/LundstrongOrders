@@ -1,8 +1,8 @@
+import { $warn } from "@lundstrong/rbxts-transform-debug";
 import { Definitions, Middleware } from "@rbxts/net";
 import { RateLimitError } from "@rbxts/net/out/middleware/RateLimitMiddleware";
 import { Players } from "@rbxts/services";
 import { t } from "@rbxts/t";
-import { $warn } from "rbxts-transform-debug";
 import { getAllItems, getConfig } from "./config";
 import { Error, Notification, Order } from "./structures";
 

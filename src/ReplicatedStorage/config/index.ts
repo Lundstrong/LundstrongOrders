@@ -1,5 +1,5 @@
+import { $warn } from "@lundstrong/rbxts-transform-debug";
 import { Workspace } from "@rbxts/services";
-import { $warn } from "rbxts-transform-debug";
 import { defaultConfig } from "./defaultConfig";
 import { ConfigSchema } from "./schema";
 
