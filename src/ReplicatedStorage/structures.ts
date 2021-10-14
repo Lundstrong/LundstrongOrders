@@ -1,5 +1,3 @@
-import { t } from "@rbxts/t";
-
 export class Order {
 	creator;
 	receiver;
@@ -17,10 +15,14 @@ export class Order {
 export class Notification {
 	title;
 	text;
+	time = 5;
 
-	constructor(title: string, text: string) {
+	constructor(title: string, text: string, time?: number) {
 		this.title = title;
 		this.text = text;
+		if (time !== undefined) {
+			this.time = time;
+		}
 	}
 }
 
