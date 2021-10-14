@@ -22,7 +22,7 @@
 			{
 				"transform": "@lundstrong/rbxts-transform-debug",
 				"enabled": true,
-				"scope": "LundstrongOrders",
+				"scope": "LundstrongOrders"
 			}
 		]
 	}
