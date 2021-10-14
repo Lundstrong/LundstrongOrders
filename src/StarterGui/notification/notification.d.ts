@@ -3,10 +3,14 @@ export type notification = ScreenGui & {
 		["Demo"]: Frame & {
 			["Frame"]: Frame & {
 				["UICorner"]: UICorner;
-				["Frame"]: Frame;
-				["textFrame"]: Frame & {
-					["TextLabel"]: TextLabel;
+				["Text"]: Frame & {
+					["Title"]: TextLabel;
+					["Content"]: TextLabel;
 				};
+				["Progress"]: Frame & {
+					["UICorner"]: UICorner;
+				};
+				["errorCode"]: TextLabel;
 			};
 		};
 		["UIListLayout"]: UIListLayout;
