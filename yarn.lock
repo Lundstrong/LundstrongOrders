@@ -93,6 +93,11 @@
   resolved "https://registry.yarnpkg.com/@rbxts/net/-/net-2.1.4.tgz#1607cdb16d4fc632ed4a06067d56987f1925aa09"
   integrity sha512-9tgWD3batonF5Yal53+0br8h/god/8xD4QVCX+ir5+yotGq6RkxqpUvfnjs1AEVQBvFQ5fkLlbfPJ/4Ip/B/ww==
 
+"@rbxts/object-utils@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@rbxts/object-utils/-/object-utils-1.0.4.tgz#c53d80f89e75c401365446be63fa1396bc2cffe7"
+  integrity sha512-dLLhf022ipV+9i910sOE7kl9losKHoon0WgeerHqVMQA5EYsLUsVT2AxhJuhk8MiDn5oJ2GiFofE/LadY9TpJQ==
+
 "@rbxts/services@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@rbxts/services/-/services-1.2.0.tgz#5dcc980fc937d5634dab31f8e564f6565d78ea47"
