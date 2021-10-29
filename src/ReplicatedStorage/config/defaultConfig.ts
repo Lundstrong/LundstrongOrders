@@ -38,17 +38,17 @@ export const defaultConfig: ConfigSchema = {
 		CompletedOrdersTime: 15,
 	},
 	MenuItems: [
-		{
-			CategoryName: "Entree",
-			Items: ["Garlic Bread"],
-		},
-		{
-			CategoryName: "Mains",
-			Items: ["Steak & Chips", "Mac 'n' Cheese"],
-		},
-		{
-			CategoryName: "Deserts",
-			Items: ["Chocolate Cake", "Donuts"],
-		},
+		// {
+		// 	CategoryName: "Entree",
+		// 	Items: ["Garlic Bread"],
+		// },
+		// {
+		// 	CategoryName: "Mains",
+		// 	Items: ["Steak & Chips", "Mac 'n' Cheese"],
+		// },
+		// {
+		// 	CategoryName: "Deserts",
+		// 	Items: ["Chocolate Cake", "Donuts"],
+		// },
 	],
 };
