@@ -4,7 +4,7 @@ import { RateLimitError } from "@rbxts/net/out/middleware/RateLimitMiddleware";
 import { Players } from "@rbxts/services";
 import { t } from "@rbxts/t";
 import { getAllItems, getConfig } from "./config";
-import { Error, Notification, Order } from "./structures";
+import { Error, fireableGuiTypes, Notification, Order } from "./structures";
 
 const isOrder: t.check<Order> = (value): value is Order => value instanceof Order;
 
@@ -50,4 +50,5 @@ export const remotes = Definitions.Create({
 		}),
 	]),
 	SendNotification: Definitions.ServerToClientEvent<[Notification: Notification | Error]>(),
+	EnableGui: Definitions.ServerToClientEvent<[GuiType: fireableGuiTypes]>(),
 });

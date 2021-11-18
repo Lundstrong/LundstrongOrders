@@ -34,3 +34,11 @@ export class Error extends Notification {
 		this.code = code;
 	}
 }
+
+// * These GUI types can be "fired" to the client via the API or internal scripts.
+// ? a const enum is used here, so values are replaced at the transpile, instead of needing to have extra code at run-time.
+export const enum fireableGuiTypes {
+	cashierGui,
+	kioskGui,
+	hrScreenGui,
+}

@@ -3,7 +3,7 @@
   "version": "3.0.0-dev.0",
   "description": "A beautiful ordering system, designed for your Roblox Cafe.",
   "scripts": {
-    "build:prod": "rbxtsc --rojo compile.project.json",
+    "build:prod": "rbxtsc --rojo compile.project.json -p tsconfig.production.json",
     "build:watch": "rbxtsc -w --rojo development.project.json"
   },
   "license": "Apache-2.0",
@@ -11,12 +11,13 @@
     "@rbxts/net": "2.1.4",
     "@rbxts/object-utils": "1.0.4",
     "@rbxts/services": "1.2.0",
-    "@rbxts/t": "2.1.5"
+    "@rbxts/t": "2.1.5",
+    "@rbxts/validate-tree": "2.0.1"
   },
   "devDependencies": {
-    "@lundstrong/rbxts-transform-debug": "1.0.0-rc.3",
-    "@rbxts/compiler-types": "1.2.3-types.0",
-    "@rbxts/types": "1.0.533",
+    "@lundstrong/rbxts-transform-debug": "1.0.0-rc.4",
+    "@rbxts/compiler-types": "1.2.7-types.0",
+    "@rbxts/types": "*",
     "@typescript-eslint/eslint-plugin": "4.32.0",
     "@typescript-eslint/parser": "4.32.0",
     "eslint": "7.32.0",
@@ -25,10 +26,10 @@
     "eslint-plugin-roblox-ts": "0.0.31",
     "prettier": "2.4.1",
     "rbxmx-to-ts": "1.0.4",
-    "roblox-ts": "1.2.3",
-    "typescript": "4.3.5"
+    "roblox-ts": "1.2.7",
+    "typescript": "4.4.4"
   },
   "resolutions": {
-    "typescript": "4.3.5"
+    "typescript": "4.4.4"
   }
 }
