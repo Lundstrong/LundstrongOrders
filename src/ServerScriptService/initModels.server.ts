@@ -16,12 +16,9 @@ const screenGuiTree = {
 	$className: "Model",
 	mainPart: {
 		$className: "BasePart",
-		mainGui: {
-			$className: "SurfaceGui",
-			Frame: {
-				$className: "Frame",
-				ImageLabel: "ImageLabel",
-			},
+		imagePart: {
+			$className: "BasePart",
+			Decal: "Decal",
 		},
 	},
 } as const;
@@ -50,9 +47,7 @@ if (modelsFolder) {
 	for (const model of modelsFolder.GetChildren()) {
 		if (model.Name === "Register") {
 			if (validateTree(model, screenGuiTree)) {
-				const gui = model.mainPart.mainGui;
-				gui.Enabled = true;
-				gui.Frame.ImageLabel.Image = configuration.Branding.imageId;
+				model.mainPart.imagePart.Decal.Texture = configuration.Branding.ImageId;
 				const ClickDetector = new Instance("ClickDetector");
 				ClickDetector.Parent = model.mainPart;
 				ClickDetector.MouseClick.Connect((plr) => {
@@ -87,13 +82,11 @@ if (modelsFolder) {
 			}
 		} else if (model.Name === "Kiosk") {
 			if (validateTree(model, screenGuiTree)) {
-				const gui = model.mainPart.mainGui;
-				gui.Enabled = true;
-				gui.Frame.ImageLabel.Image = configuration.Branding.imageId;
+				model.mainPart.imagePart.Decal.Texture = configuration.Branding.ImageId;
 				const ClickDetector = new Instance("ClickDetector");
 				ClickDetector.Parent = model.mainPart;
 				ClickDetector.MouseClick.Connect((plr) => {
-					if (configuration.KioskSettings.GamepassRequired) {
+					if (configuration.KioskSettings.GamepassRequired === true) {
 						if (
 							MarketplaceService.UserOwnsGamePassAsync(plr.UserId, configuration.KioskSettings.GamepassID)
 						) {
@@ -104,6 +97,9 @@ if (modelsFolder) {
 								MarketplaceService.PromptGamePassPurchase(plr, configuration.KioskSettings.GamepassID);
 							}
 						}
+					} else {
+						$print(`Firing ${plr.UserId} with kioskGui`);
+						enableGui.SendToPlayer(plr, fireableGuiTypes.kioskGui);
 					}
 				});
 			} else {
@@ -129,9 +125,7 @@ if (modelsFolder) {
 			}
 		} else if (model.Name === "hrScreen") {
 			if (validateTree(model, screenGuiTree)) {
-				const gui = model.mainPart.mainGui;
-				gui.Enabled = true;
-				gui.Frame.ImageLabel.Image = configuration.Branding.imageId;
+				model.mainPart.imagePart.Decal.Texture = configuration.Branding.ImageId;
 				const ClickDetector = new Instance("ClickDetector");
 				ClickDetector.Parent = model.mainPart;
 				ClickDetector.MouseClick.Connect((plr) => {

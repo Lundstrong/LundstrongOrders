@@ -3,7 +3,7 @@ import { ConfigSchema } from "./schema";
 export const defaultConfig: ConfigSchema = {
 	Branding: {
 		Name: game.Name,
-		imageId: "rbxassetid://952441662",
+		ImageId: "rbxassetid://952441662",
 	},
 	Cooldowns: {
 		OrderCooldown: 7,
