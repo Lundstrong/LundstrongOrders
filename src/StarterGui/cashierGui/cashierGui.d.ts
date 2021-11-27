@@ -52,10 +52,6 @@ export type cashierGui = ScreenGui & {
 			["Scale"]: NumberValue;
 			["Size"]: Vector3Value;
 		};
-		["UIScale"]: UIScale & {
-			["Scale"]: NumberValue;
-			["Size"]: Vector3Value;
-		};
 	};
 	["reportBugs"]: Frame & {
 		["bgGreen"]: ImageLabel;
@@ -130,10 +126,6 @@ export type cashierGui = ScreenGui & {
 			["Scale"]: NumberValue;
 			["Size"]: Vector3Value;
 		};
-		["UIScale"]: UIScale & {
-			["Scale"]: NumberValue;
-			["Size"]: Vector3Value;
-		};
 	};
 	["viewMenu"]: Frame & {
 		["UICorner"]: UICorner;
@@ -185,10 +177,6 @@ export type cashierGui = ScreenGui & {
 			["Scale"]: NumberValue;
 			["Size"]: Vector3Value;
 		};
-		["UIScale"]: UIScale & {
-			["Scale"]: NumberValue;
-			["Size"]: Vector3Value;
-		};
 	};
 	["home"]: Frame & {
 		["UICorner"]: UICorner;
@@ -217,10 +205,6 @@ export type cashierGui = ScreenGui & {
 			["Scale"]: NumberValue;
 			["Size"]: Vector3Value;
 		};
-		["UIScale"]: UIScale & {
-			["Scale"]: NumberValue;
-			["Size"]: Vector3Value;
-		};
 	};
 	["createOrder"]: Frame & {
 		["UICorner"]: UICorner;
@@ -237,10 +221,6 @@ export type cashierGui = ScreenGui & {
 				["UICorner"]: UICorner;
 				["UIPadding"]: UIPadding;
 			};
-		};
-		["homeIcon"]: TextButton & {
-			["UICorner"]: UICorner;
-			["homeButton"]: ImageButton;
 		};
 		["summaryFrame"]: Frame & {
 			["UICorner"]: UICorner;
@@ -288,9 +268,9 @@ export type cashierGui = ScreenGui & {
 			["Scale"]: NumberValue;
 			["Size"]: Vector3Value;
 		};
-		["UIScale"]: UIScale & {
-			["Scale"]: NumberValue;
-			["Size"]: Vector3Value;
+		["homeIcon"]: TextButton & {
+			["UICorner"]: UICorner;
+			["homeButton"]: ImageButton;
 		};
 	};
 }
