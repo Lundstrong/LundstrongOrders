@@ -1,5 +1,4 @@
 import { TweenService } from "@rbxts/services";
-const tweeninfo = new TweenInfo(0.75);
 
 interface animatableFrame extends Frame {
 	animFrame: Frame;
@@ -8,12 +7,12 @@ interface animatableFrame extends Frame {
 }
 
 export const CreateFrameToFrameTween = (currentFrame: animatableFrame, newFrame: animatableFrame) => {
-	const coverUI = TweenService.Create(currentFrame.animFrame, tweeninfo, { Transparency: 0 });
-	const invertColours = TweenService.Create(currentFrame.bgGreenAnim, tweeninfo, { ImageTransparency: 0 });
-	const removeExitButton = TweenService.Create(currentFrame.exitButton, tweeninfo, { Transparency: 1 });
-	const unCoverUI = TweenService.Create(newFrame.animFrame, tweeninfo, { Transparency: 1 });
-	const normalColours = TweenService.Create(newFrame.bgGreenAnim, tweeninfo, { ImageTransparency: 1 });
-	const showExitButton = TweenService.Create(newFrame.exitButton, tweeninfo, { Transparency: 0 });
+	const coverUI = TweenService.Create(currentFrame.animFrame, new TweenInfo(0.75), { Transparency: 0 });
+	const invertColours = TweenService.Create(currentFrame.bgGreenAnim, new TweenInfo(0.75), { ImageTransparency: 0 });
+	const removeExitButton = TweenService.Create(currentFrame.exitButton, new TweenInfo(0.75), { Transparency: 1 });
+	const unCoverUI = TweenService.Create(newFrame.animFrame, new TweenInfo(0.75), { Transparency: 1 });
+	const normalColours = TweenService.Create(newFrame.bgGreenAnim, new TweenInfo(0.75), { ImageTransparency: 1 });
+	const showExitButton = TweenService.Create(newFrame.exitButton, new TweenInfo(0.75), { Transparency: 0 });
 	removeExitButton.Completed.Connect(() => {
 		currentFrame.Visible = false;
 		newFrame.Visible = true;
@@ -58,9 +57,9 @@ export const CreateEntryTween = (currentFrame: animatableFrame) => {
 };
 
 export const CreateExitTween = (currentFrame: animatableFrame) => {
-	const coverUI = TweenService.Create(currentFrame.animFrame, tweeninfo, { Transparency: 0 });
-	const invertColours = TweenService.Create(currentFrame.bgGreenAnim, tweeninfo, { ImageTransparency: 0 });
-	const removeExitButton = TweenService.Create(currentFrame.exitButton, tweeninfo, { Transparency: 1 });
+	const coverUI = TweenService.Create(currentFrame.animFrame, new TweenInfo(0.75), { Transparency: 0 });
+	const invertColours = TweenService.Create(currentFrame.bgGreenAnim, new TweenInfo(0.75), { ImageTransparency: 0 });
+	const removeExitButton = TweenService.Create(currentFrame.exitButton, new TweenInfo(0.75), { Transparency: 1 });
 
 	removeExitButton.Completed.Connect(() => {
 		currentFrame.Visible = false;

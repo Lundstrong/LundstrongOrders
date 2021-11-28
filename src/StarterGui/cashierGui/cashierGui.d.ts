@@ -249,10 +249,17 @@ export type cashierGui = ScreenGui & {
 			["UICorner"]: UICorner;
 			["Categories"]: ScrollingFrame & {
 				["UIListLayout"]: UIListLayout;
+				["cloneCategory"]: TextButton & {
+					["UICorner"]: UICorner;
+					["usernameText"]: TextButton;
+					["dropdownButton"]: ImageButton;
+					["Index"]: IntValue;
+				};
 				["selectedCategory"]: TextButton & {
 					["UICorner"]: UICorner;
 					["usernameText"]: TextButton;
 					["dropdownButton"]: ImageButton;
+					["hiddenCategory"]: ObjectValue;
 				};
 			};
 		};

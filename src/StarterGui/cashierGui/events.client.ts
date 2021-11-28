@@ -71,20 +71,24 @@ const openCategorySelector = () => {
 cashierGuiInstance.createOrder.Category.MouseButton1Up.Connect(openCategorySelector);
 cashierGuiInstance.createOrder.Category.usernameText.MouseButton1Up.Connect(openCategorySelector);
 cashierGuiInstance.createOrder.Category.dropdownButton.MouseButton1Up.Connect(openCategorySelector);
+cashierGuiInstance.createOrder.Categories.Categories.UIListLayout.GetPropertyChangedSignal(
+	"AbsoluteContentSize",
+).Connect(() => {
+	const absoluteSize = cashierGuiInstance.createOrder.Categories.Categories.UIListLayout.AbsoluteContentSize;
+	cashierGuiInstance.createOrder.Categories.Categories.CanvasSize = UDim2.fromOffset(0, absoluteSize.Y);
+	cashierGuiInstance.createOrder.Categories.Size = UDim2.fromOffset(180, absoluteSize.Y < 132 ? absoluteSize.Y : 132);
+});
 cashierGuiInstance.createOrder.ScrollingFrame.UIGridLayout.GetPropertyChangedSignal("AbsoluteContentSize").Connect(
 	() => {
 		const absoluteSize = cashierGuiInstance.createOrder.ScrollingFrame.UIGridLayout.AbsoluteContentSize;
-		cashierGuiInstance.createOrder.ScrollingFrame.CanvasSize = UDim2.fromOffset(absoluteSize.X, absoluteSize.Y);
+		cashierGuiInstance.createOrder.ScrollingFrame.CanvasSize = UDim2.fromOffset(0, absoluteSize.Y);
 	},
 );
 cashierGuiInstance.createOrder.summaryFrame.ScrollingFrame.UIGridLayout.GetPropertyChangedSignal(
 	"AbsoluteContentSize",
 ).Connect(() => {
 	const absoluteSize = cashierGuiInstance.createOrder.summaryFrame.ScrollingFrame.UIGridLayout.AbsoluteContentSize;
-	cashierGuiInstance.createOrder.summaryFrame.ScrollingFrame.CanvasSize = UDim2.fromOffset(
-		absoluteSize.X,
-		absoluteSize.Y,
-	);
+	cashierGuiInstance.createOrder.summaryFrame.ScrollingFrame.CanvasSize = UDim2.fromOffset(0, absoluteSize.Y);
 });
 cashierGuiInstance.createOrder.exitButton.MouseButton1Up.Connect(() => {
 	CreateExitTween(cashierGuiInstance.createOrder);
@@ -152,7 +156,7 @@ cashierGuiInstance.settings.exitButton.MouseButton1Up.Connect(() => {
 });
 cashierGuiInstance.settings.content.UIListLayout.GetPropertyChangedSignal("AbsoluteContentSize").Connect(() => {
 	const absoluteSize = cashierGuiInstance.settings.content.UIListLayout.AbsoluteContentSize;
-	cashierGuiInstance.settings.content.CanvasSize = UDim2.fromOffset(absoluteSize.X, absoluteSize.Y);
+	cashierGuiInstance.settings.content.CanvasSize = UDim2.fromOffset(0, absoluteSize.Y);
 });
 // viewMenu
 cashierGuiInstance.viewMenu.homeIcon.MouseButton1Up.Connect(() => {
@@ -167,5 +171,5 @@ cashierGuiInstance.viewMenu.exitButton.MouseButton1Up.Connect(() => {
 });
 cashierGuiInstance.viewMenu.ScrollingFrame.UIListLayout.GetPropertyChangedSignal("AbsoluteContentSize").Connect(() => {
 	const absoluteSize = cashierGuiInstance.viewMenu.ScrollingFrame.UIListLayout.AbsoluteContentSize;
-	cashierGuiInstance.viewMenu.ScrollingFrame.CanvasSize = UDim2.fromOffset(absoluteSize.X, absoluteSize.Y);
+	cashierGuiInstance.viewMenu.ScrollingFrame.CanvasSize = UDim2.fromOffset(0, absoluteSize.Y);
 });
