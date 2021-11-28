@@ -93,10 +93,10 @@
   resolved "https://registry.yarnpkg.com/@rbxts/compiler-types/-/compiler-types-1.2.3-types.1.tgz#d7945531c917d62bafadd2b5aa6c2f2e88a2036a"
   integrity sha512-SXXIBazyJ7N6d2xcy471/kqZZpCv7EDOWrRJ45jcv3g00VQaZwYl4Elr10woqRloIblQanwJ7yUqGXAsWv7iuQ==
 
-"@rbxts/net@2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@rbxts/net/-/net-2.1.4.tgz#1607cdb16d4fc632ed4a06067d56987f1925aa09"
-  integrity sha512-9tgWD3batonF5Yal53+0br8h/god/8xD4QVCX+ir5+yotGq6RkxqpUvfnjs1AEVQBvFQ5fkLlbfPJ/4Ip/B/ww==
+"@rbxts/net@2.2.0-beta.0":
+  version "2.2.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/net/-/net-2.2.0-beta.0.tgz#20c1a984a8b3b9b4db5ff3947b8d8d88b836cdbb"
+  integrity sha512-hC0GdqP14qWkXW9gqlK40Bl2cuIS9PDAvSKADF0Z1plnrarYtiW6pVEO6ftXhksSEX4MlZC/f7tjqurvrdjZfA==
 
 "@rbxts/object-utils@1.0.4":
   version "1.0.4"

@@ -13,7 +13,7 @@ const onRateLimitError = (errorData: RateLimitError, userfacingEventName: string
 	if (player) {
 		// error handler is always on the server :)
 		$warn(`Cooldown for ${userfacingEventName} hasn't expired for ${errorData.UserId}`);
-		remotes.Server.Create("SendNotification").SendToPlayer(
+		remotes.Server.Get("SendNotification").SendToPlayer(
 			player,
 			new Error(`Slow down! Your cooldown hasn't expired for ${userfacingEventName}.`, 0xc),
 		);

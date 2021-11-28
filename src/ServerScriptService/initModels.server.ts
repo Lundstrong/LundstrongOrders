@@ -6,7 +6,7 @@ import { remotes } from "ReplicatedStorage/remotes";
 import { fireableGuiTypes } from "ReplicatedStorage/structures";
 
 const configuration = getConfig();
-const enableGui = remotes.Server.Create("EnableGui");
+const enableGui = remotes.Server.Get("EnableGui");
 
 const modelsFolder = Workspace.WaitForChild("LundstrongOrders").FindFirstChild("Models");
 
