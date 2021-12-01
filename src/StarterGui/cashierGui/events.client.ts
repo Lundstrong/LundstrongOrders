@@ -113,9 +113,9 @@ cashierGuiInstance.usernamePrompt.buttonFrame.submitOrderButton.MouseButton1Up.C
 		const items: string[] = [];
 		for (const item of cashierGuiInstance.createOrder.summaryFrame.ScrollingFrame.GetChildren()) {
 			if (item.IsA("TextButton") && item.Name === "itemFrame") {
-				const TextLabel = item.FindFirstChildWhichIsA("TextLabel");
-				if (TextLabel) {
-					items.push(TextLabel.Text);
+				const itemText = item.FindFirstChildWhichIsA("TextButton");
+				if (itemText) {
+					items.push(itemText.Text);
 				}
 			}
 		}

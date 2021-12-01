@@ -124,15 +124,15 @@ cashierGuiInstance.usernamePrompt.usernameFrame.usernameText.GetPropertyChangedS
 		const toReturn: Player[] = [];
 		const playerInput = cashierGuiInstance.usernamePrompt.usernameFrame.usernameText.Text.lower();
 		for (const player of Players.GetPlayers()) {
-			if (string.sub(player.DisplayName.lower(), 1, playerInput.size()) === playerInput) {
+			if (string.sub(player.Name.lower(), 1, playerInput.size()) === playerInput) {
 				toReturn.push(player);
 			}
 		}
 		if (toReturn[0] && toReturn[0].IsA("Player")) {
 			cashierGuiInstance.usernamePrompt.usernameFrame.playerName.Value = toReturn[0].Name;
-			cashierGuiInstance.usernamePrompt.usernameFrame.usernamePrompt.Text = toReturn[0].DisplayName;
+			cashierGuiInstance.usernamePrompt.usernameFrame.usernamePrompt.Text = toReturn[0].Name;
 			cashierGuiInstance.usernamePrompt.usernameFrame.usernameText.Text = string.sub(
-				toReturn[0].DisplayName,
+				toReturn[0].Name,
 				1,
 				cashierGuiInstance.usernamePrompt.usernameFrame.usernameText.Text.size(),
 			);
