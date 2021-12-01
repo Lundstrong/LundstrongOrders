@@ -42,6 +42,11 @@ export interface ConfigSchema {
 		CompletedOrdersTime: number;
 	};
 
+	Points: {
+		PointsEnabled: boolean;
+		PointsAwarded: number;
+	};
+
 	MenuItems: {
 		CategoryName: string;
 		Items: string[];

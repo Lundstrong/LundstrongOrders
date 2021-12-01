@@ -37,6 +37,10 @@ export const defaultConfig: ConfigSchema = {
 	PickupScreenSettings: {
 		CompletedOrdersTime: 15,
 	},
+	Points: {
+		PointsEnabled: true,
+		PointsAwarded: 1,
+	},
 	MenuItems: [
 		// {
 		// 	CategoryName: "Entree",
