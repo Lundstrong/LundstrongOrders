@@ -1,14 +1,37 @@
 export class Order {
+	static last_id = 0;
+
+	items;
+	id;
+
 	creator;
 	receiver;
-	items;
+	claimer?: Player;
+
 	isClaimed = false;
 	isCompleted = false;
+	isDeleted = false;
 
 	constructor(creator: Player, receiver: Player, items: string[]) {
 		this.creator = creator;
 		this.receiver = receiver;
 		this.items = items;
+		this.id = ++Order.last_id; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
+	}
+
+	Claim(claimer: Player) {
+		this.isClaimed = true;
+		this.claimer = claimer;
+	}
+
+	Complete() {
+		this.isCompleted = true;
+	}
+
+	Delete() {
+		this.isDeleted = true;
+		this.isClaimed = true;
+		this.isCompleted = true;
 	}
 }
 
