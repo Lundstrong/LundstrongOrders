@@ -93,6 +93,11 @@
   resolved "https://registry.yarnpkg.com/@rbxts/compiler-types/-/compiler-types-1.2.3-types.1.tgz#d7945531c917d62bafadd2b5aa6c2f2e88a2036a"
   integrity sha512-SXXIBazyJ7N6d2xcy471/kqZZpCv7EDOWrRJ45jcv3g00VQaZwYl4Elr10woqRloIblQanwJ7yUqGXAsWv7iuQ==
 
+"@rbxts/datastore2@1.4.0-ts.0":
+  version "1.4.0-ts.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/datastore2/-/datastore2-1.4.0-ts.0.tgz#378e607bde388522032aeb99633b9749da19417d"
+  integrity sha512-jfp0QEF6Wx1YvIXabvaB8mS57gHL4bz50z09/mxZ14N97hXmDtE1fZZduZgmcOtsm4IxCIWjYN85m0VRXBsEFg==
+
 "@rbxts/net@2.2.0-beta.0":
   version "2.2.0-beta.0"
   resolved "https://registry.yarnpkg.com/@rbxts/net/-/net-2.2.0-beta.0.tgz#20c1a984a8b3b9b4db5ff3947b8d8d88b836cdbb"
