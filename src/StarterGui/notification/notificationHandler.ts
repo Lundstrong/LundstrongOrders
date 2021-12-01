@@ -11,7 +11,8 @@ export const showNotification = (notification: Notification | Error) => {
 	clone.Frame.Text.Title.Text = notification.title;
 	clone.Frame.Text.Content.Text = notification.text;
 
-	if (notification instanceof Error) {
+	// ? instanceOf doesn't work, so we're just checking the property itself
+	if ("code" in notification) {
 		clone.Frame.errorCode.Visible = true;
 		clone.Frame.errorCode.Text = `Error Code: ${notification.code}`;
 	}
@@ -43,6 +44,7 @@ export const showNotification = (notification: Notification | Error) => {
 		clone.Destroy();
 	});
 
+	clone.Visible = true;
 	showAnimation.Play();
 	(script.Parent!.WaitForChild("Sound") as Sound).Play();
 };
