@@ -13,14 +13,14 @@ const sendNotification = remotes.Server.Get("SendNotification");
 
 const config = getConfig();
 DataStore2.Combine("DATA", "points");
-const orderCache: Order[] = [];
+const orderCache = new Map<number, Order>();
 
 // * Remote Callbacks
 createOrder.SetCallback((creator, receiver, items) => {
 	const receiverPlayer = Players.GetPlayers().find((player) => player.Name === receiver);
 	if (receiverPlayer) {
 		const order = new Order(creator, receiverPlayer, items);
-		orderCache[order.id] = order;
+		orderCache.set(order.id, order);
 		orderCacheEvent.SendToAllPlayers(orderCache);
 		// TODO: Fire API Event
 		if (creator.UserId !== receiverPlayer.UserId) {
@@ -50,7 +50,7 @@ createOrder.SetCallback((creator, receiver, items) => {
 });
 
 claimOrder.SetCallback((player, order) => {
-	if (order === orderCache[order.id]) {
+	if (order === orderCache.get(order.id)) {
 		if (order.isCompleted === false) {
 			if (config.OrderBoardSettings.GroupId !== false && config.OrderBoardSettings.GroupId !== 0) {
 				if (config.OrderBoardSettings.MinimumRankEnabled) {
@@ -71,7 +71,7 @@ claimOrder.SetCallback((player, order) => {
 			}
 			order.Claim(player);
 			// TODO: Fire API Event
-			orderCache[order.id] = order;
+			orderCache.set(order.id, order);
 			orderCacheEvent.SendToAllPlayers(orderCache);
 			return new Notification("Order Claimed", `Your order has been claimed by ${player.DisplayName}`, 10);
 		} else {
@@ -83,12 +83,12 @@ claimOrder.SetCallback((player, order) => {
 });
 
 completeOrder.SetCallback((player, order) => {
-	if (order === orderCache[order.id]) {
+	if (order === orderCache.get(order.id)) {
 		if (order.isClaimed === false) {
-			if (orderCache[order.id].claimer?.UserId === player.UserId) {
+			if (orderCache.get(order.id)!.claimer?.UserId === player.UserId) {
 				order.Complete();
 				// TODO: Fire API Event
-				orderCache[order.id] = order;
+				orderCache.set(order.id, order);
 				orderCacheEvent.SendToAllPlayers(orderCache);
 				return new Notification("Order Claimed", `Your order has been claimed by ${player.DisplayName}`, 10);
 			} else {
@@ -103,7 +103,7 @@ completeOrder.SetCallback((player, order) => {
 });
 
 deleteOrder.SetCallback((player, order) => {
-	if (order === orderCache[order.id]) {
+	if (order === orderCache.get(order.id)) {
 		if (order.isCompleted === false) {
 			if (config.hrScreenSettings.GroupId !== false && config.hrScreenSettings.GroupId !== 0) {
 				if (config.hrScreenSettings.MinimumRankEnabled) {
@@ -122,7 +122,7 @@ deleteOrder.SetCallback((player, order) => {
 			}
 			order.Delete();
 			// TODO: Fire API Event
-			orderCache[order.id] = order;
+			orderCache.set(order.id, order);
 			orderCacheEvent.SendToAllPlayers(orderCache);
 			return new Notification("Order Deleted", `Your order has been deleted by ${player.DisplayName}`, 10);
 		} else {
@@ -181,7 +181,7 @@ if (config.Points.PointsEnabled) {
 // * PlayerRemoving
 Players.PlayerRemoving.Connect((player) => {
 	let changesMade = false;
-	for (const order of orderCache) {
+	for (const [, order] of orderCache) {
 		if (order.receiver.UserId === player.UserId) {
 			if (order.isClaimed === false) {
 				order.Delete();

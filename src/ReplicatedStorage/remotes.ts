@@ -49,7 +49,7 @@ export const remotes = Definitions.Create({
 			ErrorHandler: (errorData) => onRateLimitError(errorData, "deleting orders"),
 		}),
 	]),
-	OrderCacheUpdate: Definitions.ServerToClientEvent<[Orders: Order[]]>(),
+	OrderCacheUpdate: Definitions.ServerToClientEvent<[Orders: Map<number, Order>]>(),
 	SendNotification: Definitions.ServerToClientEvent<[Notification: Notification | Error]>(),
 	EnableGui: Definitions.ServerToClientEvent<[GuiType: fireableGuiTypes]>(),
 });
