@@ -15,7 +15,7 @@ jobs:
       with:
         submodules: true
 
-    - uses: Roblox/setup-foreman@v1
+    - uses: Roblox/setup-foreman@v2
       with:
         version: "^1.0.0"
         token: ${{ secrets.GITHUB_TOKEN }}
